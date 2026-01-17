@@ -17,7 +17,7 @@ const categoryColors: Record<string, { bg: string; border: string; text: string 
 
 export function EURegulation() {
   return (
-    <section id="regulation" className="py-20 px-6">
+    <section id="euregulation" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title={regulationContent.title}

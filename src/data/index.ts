@@ -13,20 +13,47 @@ export * from './roiData'
 export * from './daasIntegration'
 export * from './socialLicense'
 
+// UAS-NoiseCheck & Certification
+export * from './uasNoiseCheck'
+export * from './certificationPackages'
+
+// Market & Business Analysis
+export * from './marketAnalysis'
+export * from './swotAnalysis'
+export * from './financials'
+
+// EU Regulation & Investment
+export * from './euRegulation'
+export * from './geographicZones'
+export * from './investmentOpportunities'
+
 // Strategy & Stakeholders
 export * from './successFactors'
 export * from './stakeholders'
 
-// Navigation items - Updated with new sections
+// Navigation items - Complete navigation structure
 export const navItems = [
-  { label: 'Megatrends', href: '#megatrends' },
-  { label: 'Smart City', href: '#smartcity' },
-  { label: 'Drohnenmarkt', href: '#dronemarket' },
-  { label: 'Fallstudie', href: '#casestudy' },
-  { label: 'Lösung', href: '#solution' },
-  { label: 'ROI', href: '#roi' },
-  { label: 'Kontakt', href: '#contact' }
+  { label: 'Markt', href: '#megatrends', group: 'context' },
+  { label: 'Smart City', href: '#smartcity', group: 'context' },
+  { label: 'EU-Regulierung', href: '#euregulation', group: 'regulation' },
+  { label: 'Lösung', href: '#solution', group: 'solution' },
+  { label: 'UAS-NoiseCheck', href: '#uasnoisecheck', group: 'product' },
+  { label: 'Zertifizierung', href: '#certification', group: 'product' },
+  { label: 'Marktanalyse', href: '#marketanalysis', group: 'business' },
+  { label: 'Investment', href: '#investment', group: 'investor' },
+  { label: 'Kontakt', href: '#contact', group: 'contact' }
 ]
+
+// Navigation groups for dropdown menus (optional future use)
+export const navGroups = {
+  context: { label: 'Markt & Kontext', order: 1 },
+  regulation: { label: 'Regulierung', order: 2 },
+  solution: { label: 'AaaS Lösung', order: 3 },
+  product: { label: 'Produkte', order: 4 },
+  business: { label: 'Business', order: 5 },
+  investor: { label: 'Investoren', order: 6 },
+  contact: { label: 'Kontakt', order: 7 }
+}
 
 // Hero content
 export const heroContent = {
