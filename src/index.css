@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* AMS Audio Custom Styles */
 :root {
-    font-family: 'Outfit', 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', 'Outfit', 'DM Sans', system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     color: #f8fafc;
-    background-color: #020617;
+    background-color: #0a0a0a;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -32,14 +34,101 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #1e293b;
+    background: #1c1917;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #475569;
+    background: #44403c;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #64748b;
+    background: #57534e;
+}
+
+/* Text selection */
+::selection {
+    background: rgba(168, 162, 158, 0.3);
+    color: white;
+}
+
+/* Inter font utility */
+.font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Warm gradient text */
+.text-gradient-warm {
+    background: linear-gradient(135deg, #e7e5e4 0%, #a8a29e 50%, #e7e5e4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: warmShift 10s ease infinite;
+}
+
+@keyframes warmShift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+/* Link underline effect */
+.link-underline {
+    position: relative;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #a8a29e, #78716c);
+    transition: width 0.4s ease;
+}
+
+.link-underline:hover::after {
+    width: 100%;
+}
+
+/* Gentle float animation */
+@keyframes gentleFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.02); }
+    66% { transform: translate(-20px, 30px) scale(0.98); }
+}
+
+.animate-gentle-float {
+    animation: gentleFloat 20s ease-in-out infinite;
+}
+
+.animate-gentle-float-delayed {
+    animation: gentleFloat 25s ease-in-out infinite;
+    animation-delay: -8s;
+}
+
+.animate-gentle-float-delayed-2 {
+    animation: gentleFloat 22s ease-in-out infinite;
+    animation-delay: -15s;
+}
+
+/* Soft pulse animation for waveform */
+@keyframes softPulse {
+    0%, 100% { transform: scaleY(1); opacity: 0.4; }
+    50% { transform: scaleY(1.4); opacity: 0.7; }
+}
+
+.animate-soft-pulse {
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+/* Concentric expand animation */
+@keyframes concentricExpand {
+    0% { transform: scale(0.5); opacity: 0.6; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-concentric-expand {
+    animation: concentricExpand 6s ease-out infinite;
 }
