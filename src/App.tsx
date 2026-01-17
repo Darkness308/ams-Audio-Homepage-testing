@@ -15,6 +15,8 @@ import {
   MarketAnalysis,
   SWOT,
   Financials,
+  EURegulation,
+  InvestmentOpportunities,
   SuccessFactors,
   Stakeholders,
   Contact,
@@ -43,6 +45,11 @@ function App() {
 
       {/* Case Study - Fallstudie Iserlohn */}
       <CaseStudy />
+
+      {/* === EU-REGULIERUNG === */}
+
+      {/* EU Regulation - Verordnungen und Betriebskategorien */}
+      <EURegulation />
 
       {/* === AAAS LÖSUNG === */}
 
@@ -79,6 +86,11 @@ function App() {
 
       {/* Financials - Investoren, ROI, Prognosen */}
       <Financials />
+
+      {/* === INVESTOREN === */}
+
+      {/* Investment Opportunities - Chancen, Risiken, Due Diligence */}
+      <InvestmentOpportunities />
 
       {/* === STRATEGIE & STAKEHOLDER === */}
 

@@ -26,6 +26,10 @@ export { MarketAnalysis } from './MarketAnalysis'
 export { SWOT } from './SWOT'
 export { Financials } from './Financials'
 
+// EU Regulation & Investment
+export { EURegulation } from './EURegulation'
+export { InvestmentOpportunities } from './InvestmentOpportunities'
+
 // Strategy & Stakeholder Sections
 export { SuccessFactors } from './SuccessFactors'
 export { Stakeholders } from './Stakeholders'
