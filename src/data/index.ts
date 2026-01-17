@@ -1,5 +1,8 @@
 // Central data exports for AMS Audio Homepage
 
+// Core Services (Original AMS Audio Idea)
+export * from './coreServices'
+
 // Market & Context
 export * from './megatrends'
 export * from './smartCity'
@@ -34,13 +37,11 @@ export * from './stakeholders'
 
 // Navigation items - Complete navigation structure
 export const navItems = [
+  { label: 'Services', href: '#services', group: 'core' },
   { label: 'Markt', href: '#megatrends', group: 'context' },
-  { label: 'Smart City', href: '#smartcity', group: 'context' },
-  { label: 'EU-Regulierung', href: '#euregulation', group: 'regulation' },
   { label: 'Lösung', href: '#solution', group: 'solution' },
   { label: 'UAS-NoiseCheck', href: '#uasnoisecheck', group: 'product' },
   { label: 'Strategie', href: '#strategy', group: 'strategy' },
-  { label: 'Marktanalyse', href: '#marketanalysis', group: 'business' },
   { label: 'Investment', href: '#investment', group: 'investor' },
   { label: 'Kontakt', href: '#contact', group: 'contact' }
 ]

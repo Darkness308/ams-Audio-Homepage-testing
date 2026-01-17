@@ -1,6 +1,7 @@
 import {
   Navigation,
   Hero,
+  CoreServices,
   Megatrends,
   SmartCity,
   DroneMarket,
@@ -27,6 +28,10 @@ import { ErrorBoundary } from './components/ui'
 
 // Section configuration for scalable rendering
 const sectionGroups = {
+  core: {
+    id: 'core-services',
+    sections: [{ Component: CoreServices, key: 'services' }]
+  },
   market: {
     id: 'market-context',
     sections: [

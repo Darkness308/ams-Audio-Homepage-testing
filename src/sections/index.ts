@@ -4,6 +4,9 @@ export { Hero } from './Hero'
 export { Footer } from './Footer'
 export { Contact } from './Contact'
 
+// Core Services (Original AMS Audio Idea)
+export { CoreServices } from './CoreServices'
+
 // Market & Context Sections
 export { Megatrends } from './Megatrends'
 export { SmartCity } from './SmartCity'
