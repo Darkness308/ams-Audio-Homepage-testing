@@ -6,6 +6,10 @@ import {
   DroneMarket,
   CaseStudy,
   Solution,
+  DualEnabler,
+  ROI,
+  DaaSIntegration,
+  SocialLicense,
   SuccessFactors,
   Stakeholders,
   Contact,
@@ -21,6 +25,8 @@ function App() {
       {/* Hero Section */}
       <Hero />
 
+      {/* === MARKT & KONTEXT === */}
+
       {/* Megatrends - Die globalen Treiber */}
       <Megatrends />
 
@@ -33,14 +39,32 @@ function App() {
       {/* Case Study - Fallstudie Iserlohn */}
       <CaseStudy />
 
-      {/* Solution - Acoustic-as-a-Service */}
+      {/* === AAAS LÖSUNG === */}
+
+      {/* Solution - Acoustic-as-a-Service Grundlagen */}
       <Solution />
+
+      {/* Dual Enabler - Technische + Regulatorische Exzellenz */}
+      <DualEnabler />
+
+      {/* ROI - Risikomonetarisierung */}
+      <ROI />
+
+      {/* DaaS Integration - Data-as-a-Service & BI Maturity */}
+      <DaaSIntegration />
+
+      {/* Social License - Gesellschaftliche Akzeptanz */}
+      <SocialLicense />
+
+      {/* === STRATEGIE & STAKEHOLDER === */}
 
       {/* Success Factors - Strategische Erfolgsfaktoren */}
       <SuccessFactors />
 
       {/* Stakeholders - Vorteile für alle */}
       <Stakeholders />
+
+      {/* === KONTAKT === */}
 
       {/* Contact */}
       <Contact />

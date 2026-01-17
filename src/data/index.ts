@@ -1,20 +1,30 @@
 // Central data exports for AMS Audio Homepage
 
+// Market & Context
 export * from './megatrends'
 export * from './smartCity'
 export * from './droneMarket'
 export * from './caseStudy'
+
+// AaaS Solution
 export * from './aaaSolution'
+export * from './dualEnabler'
+export * from './roiData'
+export * from './daasIntegration'
+export * from './socialLicense'
+
+// Strategy & Stakeholders
 export * from './successFactors'
 export * from './stakeholders'
 
-// Navigation items
+// Navigation items - Updated with new sections
 export const navItems = [
   { label: 'Megatrends', href: '#megatrends' },
   { label: 'Smart City', href: '#smartcity' },
   { label: 'Drohnenmarkt', href: '#dronemarket' },
   { label: 'Fallstudie', href: '#casestudy' },
   { label: 'Lösung', href: '#solution' },
+  { label: 'ROI', href: '#roi' },
   { label: 'Kontakt', href: '#contact' }
 ]
 
