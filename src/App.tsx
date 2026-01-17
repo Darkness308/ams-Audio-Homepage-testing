@@ -10,6 +10,11 @@ import {
   ROI,
   DaaSIntegration,
   SocialLicense,
+  UASNoiseCheck,
+  CertificationPackages,
+  MarketAnalysis,
+  SWOT,
+  Financials,
   SuccessFactors,
   Stakeholders,
   Contact,
@@ -55,6 +60,25 @@ function App() {
 
       {/* Social License - Gesellschaftliche Akzeptanz */}
       <SocialLicense />
+
+      {/* === UAS-NOISECHECK & ZERTIFIZIERUNG === */}
+
+      {/* UAS-NoiseCheck - Das multimodale Messsystem */}
+      <UASNoiseCheck />
+
+      {/* Certification Packages - Basic, Professional, Enterprise */}
+      <CertificationPackages />
+
+      {/* === BUSINESS & MARKTANALYSE === */}
+
+      {/* Market Analysis - TAM/SAM/SOM, Treiber, Wettbewerb */}
+      <MarketAnalysis />
+
+      {/* SWOT - Strategische Positionierung */}
+      <SWOT />
+
+      {/* Financials - Investoren, ROI, Prognosen */}
+      <Financials />
 
       {/* === STRATEGIE & STAKEHOLDER === */}
 
