@@ -17,6 +17,7 @@ import {
   Financials,
   EURegulation,
   InvestmentOpportunities,
+  StrategyFramework,
   SuccessFactors,
   Stakeholders,
   Contact,
@@ -56,6 +57,10 @@ const sectionGroups = {
       { Component: CertificationPackages, key: 'certification' }
     ]
   },
+  strategy: {
+    id: 'strategy-framework',
+    sections: [{ Component: StrategyFramework, key: 'strategy' }]
+  },
   business: {
     id: 'business-analysis',
     sections: [
@@ -68,8 +73,8 @@ const sectionGroups = {
     id: 'investment',
     sections: [{ Component: InvestmentOpportunities, key: 'investment' }]
   },
-  strategy: {
-    id: 'strategy-stakeholder',
+  stakeholders: {
+    id: 'stakeholder-success',
     sections: [
       { Component: SuccessFactors, key: 'successfactors' },
       { Component: Stakeholders, key: 'stakeholders' }

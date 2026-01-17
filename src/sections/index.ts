@@ -31,5 +31,6 @@ export { EURegulation } from './EURegulation'
 export { InvestmentOpportunities } from './InvestmentOpportunities'
 
 // Strategy & Stakeholder Sections
+export { StrategyFramework } from './StrategyFramework'
 export { SuccessFactors } from './SuccessFactors'
 export { Stakeholders } from './Stakeholders'

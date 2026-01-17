@@ -28,6 +28,7 @@ export * from './geographicZones'
 export * from './investmentOpportunities'
 
 // Strategy & Stakeholders
+export * from './strategyFramework'
 export * from './successFactors'
 export * from './stakeholders'
 
@@ -38,7 +39,7 @@ export const navItems = [
   { label: 'EU-Regulierung', href: '#euregulation', group: 'regulation' },
   { label: 'Lösung', href: '#solution', group: 'solution' },
   { label: 'UAS-NoiseCheck', href: '#uasnoisecheck', group: 'product' },
-  { label: 'Zertifizierung', href: '#certification', group: 'product' },
+  { label: 'Strategie', href: '#strategy', group: 'strategy' },
   { label: 'Marktanalyse', href: '#marketanalysis', group: 'business' },
   { label: 'Investment', href: '#investment', group: 'investor' },
   { label: 'Kontakt', href: '#contact', group: 'contact' }
