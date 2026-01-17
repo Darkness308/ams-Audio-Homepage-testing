@@ -12,7 +12,7 @@ import { AlertTriangle, Target, Users } from 'lucide-react'
 
 export function MarketAnalysis() {
   return (
-    <section id="market" className="py-20 px-6 bg-slate-900/50">
+    <section id="marketanalysis" className="py-20 px-6 bg-slate-900/50">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title={marketAnalysisContent.title}

@@ -4,6 +4,9 @@ export { Hero } from './Hero'
 export { Footer } from './Footer'
 export { Contact } from './Contact'
 
+// Core Services (Original AMS Audio Idea)
+export { CoreServices } from './CoreServices'
+
 // Market & Context Sections
 export { Megatrends } from './Megatrends'
 export { SmartCity } from './SmartCity'
@@ -26,6 +29,11 @@ export { MarketAnalysis } from './MarketAnalysis'
 export { SWOT } from './SWOT'
 export { Financials } from './Financials'
 
+// EU Regulation & Investment
+export { EURegulation } from './EURegulation'
+export { InvestmentOpportunities } from './InvestmentOpportunities'
+
 // Strategy & Stakeholder Sections
+export { StrategyFramework } from './StrategyFramework'
 export { SuccessFactors } from './SuccessFactors'
 export { Stakeholders } from './Stakeholders'
