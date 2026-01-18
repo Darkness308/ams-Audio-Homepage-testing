@@ -25,9 +25,13 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add .
-            git commit -m "Cleanup preview for PR #${PR_NUMBER}"
-            git push
-            echo "✅ Cleaned up preview for PR #${PR_NUMBER}"
+            if git diff --cached --quiet; then
+              echo "ℹ️ No changes to commit for PR #${PR_NUMBER}"
+            else
+              git commit -m "Cleanup preview for PR #${PR_NUMBER}"
+              git push
+              echo "✅ Cleaned up preview for PR #${PR_NUMBER}"
+            fi
           else
             echo "ℹ️ No preview directory found for PR #${PR_NUMBER}"
           fi
