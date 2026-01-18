@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: '/', // For custom domain ams-audio.com
+    base: process.env.VITE_BASE_PATH || '/ams-Audio-Homepage-testing/',
     build: {
           outDir: 'dist',
           sourcemap: true,
