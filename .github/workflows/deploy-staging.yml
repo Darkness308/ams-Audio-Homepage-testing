@@ -1,8 +1,8 @@
-name: Deploy to Production
+name: Deploy to Staging
 
 on:
   push:
-    branches: ["main"]
+    branches: ["staging"]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages-production"
+  group: "pages-staging"
   cancel-in-progress: false
 
 jobs:
@@ -30,10 +30,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build with Vite (Production)
+      - name: Build with Vite (Staging)
         run: npm run build
         env:
-          VITE_BASE_PATH: /ams-Audio-Homepage-testing/
+          VITE_BASE_PATH: /ams-Audio-Homepage-testing/staging/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -45,11 +45,11 @@ jobs:
 
   deploy:
     environment:
-      name: production
-      url: https://darkness308.github.io/ams-Audio-Homepage-testing/
+      name: staging
+      url: https://darkness308.github.io/ams-Audio-Homepage-testing/staging/
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages (Production)
+      - name: Deploy to GitHub Pages (Staging)
         id: deployment
         uses: actions/deploy-pages@v4
