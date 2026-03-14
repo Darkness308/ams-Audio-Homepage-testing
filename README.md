@@ -89,6 +89,45 @@ npm run preview
 - **Icons**: Lucide React
 - **Deployment**: GitHub Pages mit GitHub Actions
 
+## 🔌 Lokale ChromaDB-Pipeline anschließen
+
+Die Frontend-Anbindung ist vorbereitet und nutzt lokal einen Vite-Proxy auf `/api`.
+
+### 1. Pipeline lokal starten
+
+Stelle sicher, dass dein lokaler Chroma-Service unter `http://127.0.0.1:8000` läuft und ein Query-Endpoint bereitstellt:
+
+- `POST /chroma/query`
+- Request-Body: `{ "query": "..." }`
+- Response-Body: `{ "answer": "...", "sources": [] }`
+
+### 2. Lokale Env-Datei anlegen
+
+```bash
+cp .env.local.example .env.local
+```
+
+Optional anpassen, falls dein Backend anders läuft:
+
+- `VITE_CHROMA_API_TARGET=http://127.0.0.1:8000`
+- `VITE_CHROMA_QUERY_PATH=/api/chroma/query`
+
+### 3. Frontend starten
+
+```bash
+npm install
+npm run dev
+```
+
+### 4. Verbindung testen
+
+- Seite öffnen
+- Zum Bereich „Kontakt“ scrollen
+- Nachricht eingeben und absenden
+- Die Antwort der lokalen Chroma-Pipeline wird direkt unter dem Button angezeigt
+
+Wenn ein Fehler erscheint, prüfe zuerst, ob die Pipeline den Endpoint `POST /chroma/query` wirklich anbietet.
+
 ## 📝 Hinweise
 
 - **Öffentliche Sichtbarkeit**: Alle Deployments (Production, Staging, Preview) sind öffentlich zugänglich

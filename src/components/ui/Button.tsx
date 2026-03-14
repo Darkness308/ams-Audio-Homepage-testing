@@ -9,6 +9,7 @@ interface ButtonProps {
   onClick?: () => void
   className?: string
   type?: 'button' | 'submit'
+  disabled?: boolean
 }
 
 export function Button({
@@ -18,7 +19,8 @@ export function Button({
   showArrow = false,
   onClick,
   className = '',
-  type = 'button'
+  type = 'button',
+  disabled = false
 }: ButtonProps) {
   const baseStyles = 'rounded-lg transition-all duration-300 font-medium flex items-center justify-center gap-2'
 
@@ -38,7 +40,8 @@ export function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      disabled={disabled}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-60 cursor-not-allowed' : ''} ${className}`}
     >
       {children}
       {showArrow && <ArrowRight size={size === 'sm' ? 16 : size === 'lg' ? 24 : 20} />}

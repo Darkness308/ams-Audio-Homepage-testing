@@ -1,9 +1,32 @@
 import { motion } from 'framer-motion'
+import { FormEvent, useState } from 'react'
 import { SectionHeader, Button } from '../components/ui'
 import { contactInfo } from '../data'
 import { MapPin, Mail, Phone, Send } from 'lucide-react'
+import { queryChromaPipeline } from '../lib/chromaApi'
 
 export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [pipelineQuestion, setPipelineQuestion] = useState('')
+  const [pipelineAnswer, setPipelineAnswer] = useState('')
+  const [pipelineError, setPipelineError] = useState('')
+
+  const handlePipelineSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setIsSubmitting(true)
+    setPipelineAnswer('')
+    setPipelineError('')
+
+    try {
+      const result = await queryChromaPipeline(pipelineQuestion)
+      setPipelineAnswer(result.answer)
+    } catch (error) {
+      setPipelineError(error instanceof Error ? error.message : 'Unbekannter Pipeline-Fehler')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
@@ -79,7 +102,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handlePipelineSubmit}>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm text-slate-400 mb-2">Vorname</label>
@@ -133,14 +156,25 @@ export function Contact() {
                 <textarea
                   rows={4}
                   placeholder="Wie können wir Ihnen helfen?"
+                  value={pipelineQuestion}
+                  onChange={(event) => setPipelineQuestion(event.target.value)}
                   className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 focus:border-orange-500 outline-none transition resize-none"
                 />
               </div>
 
-              <Button type="submit" variant="primary" size="lg" className="w-full">
+              <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
                 <Send size={20} />
-                Nachricht senden
+                {isSubmitting ? 'Pipeline wird abgefragt...' : 'Nachricht senden'}
               </Button>
+
+              {(pipelineAnswer || pipelineError) && (
+                <div className={`rounded-lg border p-4 text-sm ${pipelineError ? 'border-red-500/30 bg-red-500/10 text-red-300' : 'border-green-500/30 bg-green-500/10 text-green-300'}`}>
+                  <p className="mb-1 font-semibold">
+                    {pipelineError ? 'Chroma-Pipeline Fehler' : 'Chroma-Pipeline Antwort'}
+                  </p>
+                  <p>{pipelineError || pipelineAnswer}</p>
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
