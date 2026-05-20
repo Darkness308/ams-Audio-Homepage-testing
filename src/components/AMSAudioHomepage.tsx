@@ -228,16 +228,17 @@ interface StatCounterProps {
 
 const StatCounter = ({ value, label, suffix = "" }: StatCounterProps) => {
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-          let start = 0;
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
           const end = parseInt(value);
+          if (isNaN(end)) return;
+          let start = 0;
           const duration = 3000;
           const increment = end / (duration / 16);
 
@@ -257,7 +258,7 @@ const StatCounter = ({ value, label, suffix = "" }: StatCounterProps) => {
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [value, isVisible]);
+  }, [value]);
 
   return (
     <div ref={ref} className="text-center">
@@ -335,7 +336,7 @@ export default function AMSAudioHomepage() {
             </div>
             <div className="hidden md:flex items-center gap-10">
               {['Leistungen', 'AcoustiScan', 'Über uns', 'Kontakt'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="link-underline text-stone-500 hover:text-stone-200 transition-colors duration-300 text-sm">{item}</a>
+                <a key={item} href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} className="link-underline text-stone-500 hover:text-stone-200 transition-colors duration-300 text-sm">{item}</a>
               ))}
               <button className="bg-stone-100 text-neutral-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-white transition-colors duration-300">Anfrage</button>
             </div>

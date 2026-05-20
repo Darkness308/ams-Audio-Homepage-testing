@@ -79,7 +79,7 @@ export const contactInfo = {
   company: 'AMS Audio Group',
   address: 'Ruhrgebiet, Deutschland',
   email: 'info@ams-audio.com',
-  phone: '+49 XXX XXXXXXX',
+  phone: 'Auf Anfrage',
   tagline: 'Acoustics as a Service'
 }
 
