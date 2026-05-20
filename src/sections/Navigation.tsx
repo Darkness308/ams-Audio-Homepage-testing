@@ -27,7 +27,7 @@ export function Navigation() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button variant="primary" size="sm">
             Demo anfragen
           </Button>
@@ -37,6 +37,8 @@ export function Navigation() {
         <button
           className="lg:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Menü schließen' : 'Menü öffnen'}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

@@ -23,7 +23,8 @@ export async function queryChromaPipeline(question: string): Promise<ChromaPipel
   })
 
   if (!response.ok) {
-    throw new Error(`Pipeline-Fehler (${response.status})`)
+    const errorText = await response.text().catch(() => '')
+    throw new Error(`Pipeline-Fehler (${response.status} ${response.statusText})${errorText ? `: ${errorText}` : ''}`)
   }
 
   const data = (await response.json()) as ChromaPipelineResponse
