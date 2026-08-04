@@ -13,11 +13,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # ── Gate 1-3: Quality Gates (SOP-005) ──────────────────────────────────────
+  quality:
+    name: Quality Gates (Lint · TypeCheck · Audit)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Gate 1 — Lint (0 warnings allowed)
+        run: npm run lint
+
+      - name: Gate 2 — TypeScript strict check
+        run: npm run typecheck
+
+      - name: Gate 3 — Security audit (no high/critical CVEs)
+        run: npm audit --audit-level=high
+
   deploy:
     environment:
       name: staging
       url: https://darkness308.github.io/ams-Audio-Homepage-testing/staging/
     runs-on: ubuntu-latest
+    needs: quality
     steps:
       - name: Checkout
         uses: actions/checkout@v4

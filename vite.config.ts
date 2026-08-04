@@ -15,6 +15,8 @@ export default defineConfig({
     },
     build: {
           outDir: 'dist',
-          sourcemap: true,
+          // Source maps disabled in production (security: no internal code exposure).
+          // ADR-0005, Sprint 1 governance hardening.
+          sourcemap: process.env.NODE_ENV !== 'production',
     },
 })
