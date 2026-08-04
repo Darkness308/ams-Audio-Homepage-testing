@@ -107,6 +107,11 @@ export function validateContentClaim(claim: ContentClaim): { valid: boolean; err
     errors.push('validatedAt muss ISO-Format haben (YYYY-MM-DD)')
   }
 
+  // 'marketing' Claims dürfen keine numerischen Werte enthalten
+  if (claim.type === 'marketing' && typeof claim.value === 'number') {
+    errors.push('marketing Claims dürfen keine numerischen Werte enthalten')
+  }
+
   // 'measured' Claims müssen eine detaillierte Quelle haben
   if (claim.type === 'measured' && claim.source.length < 20) {
     errors.push('measured Claims benötigen eine detaillierte Quellenangabe')
