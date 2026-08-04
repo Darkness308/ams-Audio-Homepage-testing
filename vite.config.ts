@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
     plugins: [react()],
     base: process.env.VITE_BASE_PATH || '/ams-Audio-Homepage-testing/',
     server: {
@@ -15,6 +15,8 @@ export default defineConfig({
     },
     build: {
           outDir: 'dist',
-          sourcemap: true,
+          // Source maps disabled in production (security: no internal code exposure).
+          // ADR-0005, Sprint 1 governance hardening.
+          sourcemap: mode !== 'production',
     },
-})
+}))
