@@ -75,7 +75,7 @@ ADR-ref: ADR-0004
 
 ## Enforcement
 
-- **Husky pre-commit hook**: `npx commitlint --edit $1`
+- **Husky commit-msg hook**: `npx commitlint --edit $1`
 - Commit ohne valides Format wird **lokal abgelehnt**
 - CI-Workflow validiert alle Commits im PR-Branch (commitlint action)
 

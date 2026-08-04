@@ -112,5 +112,10 @@ export function validateContentClaim(claim: ContentClaim): { valid: boolean; err
     errors.push('measured Claims benötigen eine detaillierte Quellenangabe')
   }
 
+  // 'marketing' Claims dürfen keine Zahlenwerte enthalten
+  if (claim.type === 'marketing' && typeof claim.value === 'number') {
+    errors.push('marketing Claims dürfen keine numerischen Werte enthalten')
+  }
+
   return { valid: errors.length === 0, errors }
 }
