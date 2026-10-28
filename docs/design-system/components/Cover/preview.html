@@ -1,0 +1,39 @@
+<!-- @dsCard height=288 -->
+<div class="cover">
+  <svg class="art" viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!--
+      blocks: stone-800 slab 224×288 (bleeds top/bottom), stone-100 168×112, stone-500 80×96, stone-300 pill 72×96
+      arrangement: one tall slab with three satellites, right of x=480, gaps of space-4 (16px)
+      pattern: literal motif (sound ripples) — concentricExpand rings from the homepage, drawn as four stone-400 arcs at space-12 pitch from the slab's lower-left corner
+      steps/radii: space-4 gaps, space-8 inset, arc pitch 48px (space-12); radius-3xl slab, radius-2xl tiles, radius-full pill
+    -->
+    <defs><clipPath id="slab"><rect x="520" y="-24" width="224" height="336" class="r3"/></clipPath></defs>
+    <rect x="520" y="-24" width="224" height="336" class="b-slab r3"/>
+    <g clip-path="url(#slab)" class="arc">
+      <circle cx="520" cy="288" r="48"/><circle cx="520" cy="288" r="96"/>
+      <circle cx="520" cy="288" r="144"/><circle cx="520" cy="288" r="192"/>
+    </g>
+    <rect x="760" y="32" width="168" height="112" class="b-light r2"/>
+    <rect x="760" y="160" width="80" height="96" class="b-mid r2"/>
+    <rect x="856" y="160" width="72" height="96" rx="36" class="b-soft"/>
+  </svg>
+  <div class="text">
+    <div class="name">AMS Audio</div>
+    <div class="tag">360° Akustik-Kompetenz für alle Anwendungen.</div>
+  </div>
+</div>
+<style>
+  body { margin: 0; background: var(--neutral-950); }
+  .cover { position: relative; width: 960px; height: 288px; background: var(--neutral-950); overflow: hidden; }
+  .art { position: absolute; inset: 0; }
+  .b-slab { fill: var(--stone-800); }
+  .b-light { fill: var(--stone-100); }
+  .b-mid { fill: var(--stone-500); }
+  .b-soft { fill: var(--stone-300); }
+  .r3 { rx: var(--radius-3xl); }
+  .r2 { rx: var(--radius-2xl); }
+  .arc circle { fill: none; stroke: var(--stone-400); stroke-width: 1; }
+  .text { position: absolute; left: 48px; bottom: 40px; max-width: 440px; }
+  .name { font: 200 80px/0.95 var(--font-sans); letter-spacing: -0.025em; color: var(--stone-200); }
+  .tag { margin-top: 16px; font: 300 14px/20px var(--font-sans); color: var(--stone-400); }
+</style>
