@@ -5,7 +5,7 @@ AMS Audio is an acoustics consultancy (Ruhrgebiet, NRW): event sound, room-acous
 - **Language:** German, formal "Sie" when the reader is addressed ("Bitte laden Sie die Seite neu."). Most copy speaks as "wir" about the company: "wir machen Schall sichtbar, messbar und beherrschbar."
 - **Headline pattern:** short nouns ending in full stops ("Klang. Präzision. Harmonie.") or a plain lead-in plus one emphasised word ("Unsere **Leistungen**", "Schallschutz im **Holzbau**"). Only the emphasised word gets the warm gradient.
 - **Technical precision is the voice.** Name norms and methods exactly: "DIN ISO 3382-1 konform", "Nachhallzeit-Messung (RT60)", "TA-Lärm Immissionsprognose", "SORA 2.5 Compliance-Check", "ISO 9613-2 Berechnung". Keep units and norm numbers verbatim.
-- **Casing:** sentence case for headings and buttons ("Beratung anfragen", "Demo ansehen"). Uppercase only in `label-caps`, `column-title` and `micro-caps` labels, always with letter-spacing.
+- **Casing:** sentence case for headings and buttons ("Beratung anfragen", "Demo ansehen"). Uppercase only in `label-caps`, `label-xs-caps`, `column-title` and `micro-caps` labels, always with letter-spacing. The one exception is the wordmark "AMS AUDIO", typed in capitals.
 - **Separators:** a middle dot between peers ("MSH Audio · AcoustiScan · Morpheus Partnership"); an en dash with spaces inside sentences.
 - **No emoji.** The one glyph exception is the "⚠" in the sections-library error state.
 
@@ -28,9 +28,10 @@ Status colours (`status-success`, `status-warning`, `status-danger`, `status-inf
 
 ## Typography
 
-- **Inter** from Google Fonts (weights 200, 300, 400, 500, 600) is the face of the live page, via `font-sans` (`.font-inter`). `index.html` also loads Outfit, DM Sans and JetBrains Mono; Tailwind's `font-sans` maps to Outfit (`ui` family), which the sections library uses. JetBrains Mono (`mono`) appears only for regulation numbers.
+- **Inter** (weights 200–600) is the face of the live page. It comes from the `:root` stack in `index.css` and the `.font-inter` class on the homepage root (`sans` family). Tailwind's `font-sans` maps to Outfit (`ui` family) but no live element uses that class. JetBrains Mono (`mono`) appears only for regulation numbers in the sections library.
+- All four faces (Inter, Outfit, DM Sans, JetBrains Mono) are self-hosted through `@fontsource` packages imported in `src/main.tsx`; the site makes no requests to Google Fonts.
 - Display type is **extra-light**: `display-hero` (96px at lg, 72px md, 48px mobile) and `display-section` (48px md, 36px mobile) at weight 200 with -0.025em tracking. The gradient word inside a heading steps up to weight 300.
-- Running text is light (300): `lead` for intros, capped at the `measure` width; `body` and `body-sm` for lists and card copy.
+- Running text is mostly light (300): `lead` for the hero paragraph and `lead-sm` (18px) for section intros, both capped at the `measure` width; `body` for tiles and feature lists. ServiceCard copy is regular (400): `body-sm` for the description, `list-sm` for its bullets.
 - Weight 500 is reserved for titles (`title-card`, `title-sm`), buttons (`button`) and footer `column-title`.
 - Numbers: `stat-number` (weight 200) with the unit as suffix in the same style ("15+", "98%").
 
@@ -39,31 +40,31 @@ Status colours (`status-success`, `status-warning`, `status-danger`, `status-inf
 - Content sits in a centred `container` (1280px) with a `space-6` side gutter. Contact uses `container-narrow`.
 - Every content section has `space-28` top and bottom padding; section headers end with `space-20` before their content.
 - Section headers stack Eyebrow → heading → lead, centred, with `space-8` between each.
-- Grids: ServiceCards in 1/2/3 columns with `space-6` gaps; stats in 2/4 columns; feature sections in two columns with an `space-20` gap.
+- Grids: ServiceCards in 1/2/3 columns with `space-6` gaps; stats in 2/4 columns with `space-12` / `space-16` gaps; feature sections in two columns with a `space-16`–`space-20` gap.
 - Sections are separated by space alone; only the partner strip and footer carry `hairline` rules.
 
 ## Shape, borders and elevation
 
 - Radii grow with the object: `radius-lg` chips → `radius-xl` tiles and icon wells → `radius-2xl` cards → `radius-3xl` large panels. Every button, eyebrow, avatar and dot is `radius-full`.
-- Every surface has a 1px border, `border-subtle` at rest. Elevation is borders and translucent fills, never shadows; `shadow-2xl` appears once, on the tilted device illustration.
+- Cards, tiles and pills have a 1px border, `border-subtle` at rest in most places; inside the Vision 2030 panel and on icon wells the resting border is `border-hover`. Elevation is borders and translucent fills, never shadows; `shadow-2xl` appears once, on the tilted device illustration.
 - Panels may use a diagonal gradient from `stone-900` at 50–80% to `neutral-950`.
 
 ## Motion
 
-Motion is slow and ambient. Hover transitions run 300ms (buttons, links), 500ms (icons, borders) or 700ms (ServiceCard, nav background), all ease-out.
+Motion is slow and ambient. Hover transitions run 300ms (buttons, links), 500ms (icons, borders) or 700ms (ServiceCard, team cards, nav background). They use Tailwind's default curve `cubic-bezier(0.4, 0, 0.2, 1)`; only the ServiceCard uses `ease-out`.
 
-- `gentleFloat`: 20–25s drift of large radial glows (`stone-300`/`stone-400` at 2–4% opacity).
+- `gentleFloat`: 20–25s drift of large radial glows (`stone-300` at 4%, `stone-400` at 3%, `stone-100` at 2% opacity).
 - `softPulse`: 3s scaleY 1 → 1.4 on Waveform bars, staggered 60ms per bar.
 - `concentricExpand`: 6s ripple rings from scale 0.5 to 2, four rings 1.5s apart.
 - `warmShift`: 10s drift of the gradient text.
 - Link underline grows from 0 to full width over 400ms (`stone-400` → `stone-500` gradient line, 1px).
-- Respect `prefers-reduced-motion` in new work; the source does not yet.
+- Respect `prefers-reduced-motion` in new work; the source does not yet. The component stylesheet stops the endless animations under it.
 
 ## Iconography
 
 - Icons come from **lucide-react** (0.468): line icons at 16px in buttons and eyebrows, 20–24px in wells, 28–48px in illustration tiles. Used names include Waves, Mic, Tablet, Plane, Building2, Factory, TrendingUp, Play, Volume2, ArrowRight, Phone, Mail, MapPin, TreePine, Headphones.
 - Icon colour follows the ink ladder: `stone-500`/`stone-600` at rest, `stone-400`/`stone-200` on hover.
-- **Logo:** the repository contains no logo file. The nav mark is the lucide `Waves` icon in a `radius-xl` tile (gradient `stone-700` → `stone-800`, `border-tile`) next to "AMS AUDIO" in `title-sm` and "360° Akustik" in `micro-caps`. `index.html` points at `/vite.svg`, which does not exist in `public/`.
+- **Logo:** the repository contains no logo file. The nav mark is the lucide `Waves` icon in a `radius-xl` tile (gradient `stone-700` → `stone-800`, `border-tile`) next to "AMS AUDIO" in `title-sm` and "360° Akustik" in `micro-caps`. `public/favicon.svg` repeats that tile as the browser icon.
 
 ## Components
 
@@ -79,5 +80,5 @@ Motion is slow and ambient. Hover transitions run 300ms (buttons, links), 500ms 
 
 - Not built: the React components are previewed as static HTML styled by `components/bundle.css`, hand-written from `src/components/AMSAudioHomepage.tsx` and `src/components/ui/Badge.tsx`. No bundle was run.
 - Not carried as cards: the sections library's `Button`, `Card`/`IconCard`/`FeatureCard`/`NumberedCard`, `SectionHeader`, `StatCard`/`StatGrid`, `ErrorBoundary`/`SectionLoader` (slate/orange, unrendered), and the homepage's nav, partner strip, team card and footer layouts.
-- Fonts: Inter, Outfit, DM Sans and JetBrains Mono load from Google Fonts; no font files are in the repository.
-- No logo or image assets exist in the repository.
+- Fonts: the site self-hosts Inter, Outfit, DM Sans and JetBrains Mono via `@fontsource` npm packages. The font files live in `node_modules`, not in the repository, so this system has no `fonts/` files; previews here load Inter and JetBrains Mono from Google Fonts.
+- No logo or image assets exist in the repository besides `public/favicon.svg`, which is built from the lucide `Waves` icon.
