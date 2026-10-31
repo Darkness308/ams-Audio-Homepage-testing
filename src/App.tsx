@@ -186,8 +186,6 @@ export {
   TeamSection,
   CTASection,
   FooterSection,
-  SECTIONS,
-  getSectionStatus,
 };
 
 // Main App component with modular architecture
