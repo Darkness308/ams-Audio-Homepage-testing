@@ -9,12 +9,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@fontsource/outfit": "^5.3.0",
     "framer-motion": "^11.15.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
@@ -23,14 +27,23 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
+    "@eslint/js": "^10.0.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^6.0.2",
     "autoprefixer": "^10.4.20",
+    "eslint": "^10.14.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
     "husky": "^9.1.7",
     "postcss": "^8.5.25",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3",
+    "typescript-eslint": "^8.72.1",
     "vite": "^8.0.16"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
   }
 }
