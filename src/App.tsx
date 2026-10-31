@@ -17,6 +17,7 @@ function SectionWrapper({ children, sectionName, fallback }: SectionWrapperProps
       fallback={fallback}
       onError={(error) => {
         console.error(`[${sectionName}] Error:`, error.message);
+        recordSectionError(sectionName, error);
       }}
     >
       {children}
@@ -66,6 +67,13 @@ const sectionRegistry: SectionRegistry = {
 // Mark section as loaded
 function markSectionLoaded(sectionId: string): void {
   sectionRegistry.loaded.add(sectionId);
+  logSectionStatus();
+}
+
+// Record section error
+function recordSectionError(sectionId: string, error: Error): void {
+  sectionRegistry.errors.set(sectionId, error);
+  logSectionStatus();
 }
 
 // Get section status
@@ -75,6 +83,14 @@ function getSectionStatus(): { total: number; loaded: number; errors: number } {
     loaded: sectionRegistry.loaded.size,
     errors: sectionRegistry.errors.size,
   };
+}
+
+// Log section status in development
+function logSectionStatus(): void {
+  if (process.env.NODE_ENV === 'development') {
+    const status = getSectionStatus();
+    console.log(`[App] Sections: ${status.loaded}/${status.total} loaded, ${status.errors} errors`);
+  }
 }
 
 // App wrapper with global error boundary
@@ -188,25 +204,28 @@ export {
   FooterSection,
 };
 
+// Homepage wrapper that tracks the main content section
+function HomepageWrapper({ children }: { children: React.ReactNode }) {
+  useSectionObserver('main-content');
+  return <SectionWrapper sectionName="Homepage">{children}</SectionWrapper>;
+}
+
 // Main App component with modular architecture
 function App() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Mark app as ready after initial mount
     setIsReady(true);
-
-    // Log section status in development
-    if (process.env.NODE_ENV === 'development') {
-      const status = getSectionStatus();
-      console.log(`[App] Sections: ${status.loaded}/${status.total} loaded`);
-    }
   }, []);
 
   return (
     <AppWrapper>
       <Suspense fallback={<SectionLoader />}>
-        {isReady && <AMSAudioHomepage />}
+        {isReady && (
+          <HomepageWrapper>
+            <AMSAudioHomepage />
+          </HomepageWrapper>
+        )}
       </Suspense>
     </AppWrapper>
   );
