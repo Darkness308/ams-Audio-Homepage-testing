@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ErrorBoundary } from './ui/ErrorBoundary';
 
 const SECTIONS = [
+  { id: 'main-content', name: 'Homepage' },
   { id: 'navigation', name: 'Navigation' },
   { id: 'hero', name: 'Hero Section' },
   { id: 'hero-backgrounds', name: 'Hero Backgrounds' },
@@ -65,17 +66,18 @@ function recordSectionError(sectionId: string, error: Error): void {
 
 interface SectionWrapperProps {
   children: React.ReactNode;
+  sectionId: string;
   sectionName: string;
   fallback?: React.ReactNode;
 }
 
-export function SectionWrapper({ children, sectionName, fallback }: SectionWrapperProps) {
+export function SectionWrapper({ children, sectionId, sectionName, fallback }: SectionWrapperProps) {
   return (
     <ErrorBoundary
       fallback={fallback}
       onError={(error) => {
         console.error(`[${sectionName}] Error:`, error.message);
-        recordSectionError(sectionName, error);
+        recordSectionError(sectionId, error);
       }}
     >
       {children}
@@ -91,60 +93,60 @@ function useSectionObserver(sectionId: string): void {
 
 export function NavigationSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('navigation');
-  return <SectionWrapper sectionName="Navigation">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="navigation" sectionName="Navigation">{children}</SectionWrapper>;
 }
 
 export function HeroSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('hero');
-  return <SectionWrapper sectionName="Hero">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="hero" sectionName="Hero">{children}</SectionWrapper>;
 }
 
 export function BrandsSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('brands-bar');
-  return <SectionWrapper sectionName="Brands">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="brands-bar" sectionName="Brands">{children}</SectionWrapper>;
 }
 
 export function StatsSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('stats');
-  return <SectionWrapper sectionName="Stats">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="stats" sectionName="Stats">{children}</SectionWrapper>;
 }
 
 export function ServicesSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('services-header');
-  return <SectionWrapper sectionName="Services">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="services-header" sectionName="Services">{children}</SectionWrapper>;
 }
 
 export function AcoustiScanSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('acoustiscan-feature');
-  return <SectionWrapper sectionName="AcoustiScan">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="acoustiscan-feature" sectionName="AcoustiScan">{children}</SectionWrapper>;
 }
 
 export function Vision2030Section({ children }: { children: React.ReactNode }) {
   useSectionObserver('vision-2030');
-  return <SectionWrapper sectionName="Vision 2030">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="vision-2030" sectionName="Vision 2030">{children}</SectionWrapper>;
 }
 
 export function HolzbauSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('holzbau');
-  return <SectionWrapper sectionName="Holzbau">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="holzbau" sectionName="Holzbau">{children}</SectionWrapper>;
 }
 
 export function TeamSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('team');
-  return <SectionWrapper sectionName="Team">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="team" sectionName="Team">{children}</SectionWrapper>;
 }
 
 export function CTASection({ children }: { children: React.ReactNode }) {
   useSectionObserver('cta');
-  return <SectionWrapper sectionName="CTA">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="cta" sectionName="CTA">{children}</SectionWrapper>;
 }
 
 export function FooterSection({ children }: { children: React.ReactNode }) {
   useSectionObserver('footer');
-  return <SectionWrapper sectionName="Footer">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="footer" sectionName="Footer">{children}</SectionWrapper>;
 }
 
 export function HomepageWrapper({ children }: { children: React.ReactNode }) {
   useSectionObserver('main-content');
-  return <SectionWrapper sectionName="Homepage">{children}</SectionWrapper>;
+  return <SectionWrapper sectionId="main-content" sectionName="Homepage">{children}</SectionWrapper>;
 }
