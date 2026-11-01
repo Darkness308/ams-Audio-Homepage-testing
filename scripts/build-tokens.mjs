@@ -117,7 +117,8 @@ for (const t of themeKeys) {
   const key = t.path[3]
   const light = flat.get(`color.theme.light.${key}`)
   colorTokens.push({
-    name: key,
+    // Gleicher Name wie in src/styles/tokens.css (--color-*), damit Stylebook und Website dieselben Variablen nutzen.
+    name: `color-${key}`,
     value: { dark: dsColor(resolve(t.$value)), light: dsColor(resolve(light.$value)) },
     usage: [t.$description, light.$description && light.$description !== t.$description ? `Hell: ${light.$description}` : null].filter(Boolean).join(' ') || `Semantische Farbe ${key}.`,
   })
@@ -125,7 +126,7 @@ for (const t of themeKeys) {
 for (const t of flat.values()) {
   if (t.path[1] !== 'primitive') continue
   const name = t.path.slice(2).join('-')
-  colorTokens.push({ name: `p-${name}`, value: dsColor(resolve(t.$value)), usage: `Primitive ${name}${t.$description ? ` (${t.$description})` : ''}. Nicht direkt in Komponenten verwenden, nur über semantische Tokens.` })
+  colorTokens.push({ name: `color-${name}`, value: dsColor(resolve(t.$value)), usage: `Primitive ${name}${t.$description ? ` (${t.$description})` : ''}. Nicht direkt in Komponenten verwenden, nur über semantische Tokens.` })
 }
 const styles = [...flat.values()].filter((t) => t.path[0] === 'typography').map((t) => {
   const v = resolve(t.$value)
