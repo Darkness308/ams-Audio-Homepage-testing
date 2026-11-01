@@ -1,9 +1,11 @@
-A small severity pill from the sections library that pairs a status colour with a German label.
+Eine kleine Schweregrad-Pill aus der Sections-Bibliothek, die eine Statusfarbe mit einem deutschen Label verbindet.
 
-From `Badge` and `SeverityBadge` in `src/components/ui/Badge.tsx` (the sections library, not rendered by `App.tsx`).
+Aus `Badge` und `SeverityBadge` in `src/components/ui/Badge.tsx` (die Sections-Bibliothek, nicht von `App.tsx` gerendert).
 
-- `Badge` props: `children`, `variant` (`default` | `success` | `warning` | `danger` | `info`), `size` (`sm` | `md`).
-- `SeverityBadge` maps `severity` to label and variant: critical → "Kritisch" (danger), high → "Hoch" (warning), medium → "Mittel" (info), low → "Niedrig" (success).
-- Each variant uses its `status-*` text, `status-*-bg` fill and `status-*-border` border; default uses `ui-slate-700` with `ui-slate-300` text.
-- Always keep the label: success and danger differ by hue only.
-- Shown on `ui-slate-900`, the library's card fill.
+- Props von `Badge`: `children`, `variant` (`default` | `success` | `warning` | `danger` | `info`), `size` (`sm` | `md`).
+- `SeverityBadge` ordnet `severity` Label und Variante zu: critical → „Kritisch“ (danger), high → „Hoch“ (warning), medium → „Mittel“ (info), low → „Niedrig“ (success).
+- Jede Variante nutzt ihren Text `color-status-*`, die Fläche `color-status-*-bg` und den Rand `color-status-*-border`; `default` nutzt die Fläche `color-surface-well` mit Rand `color-border-subtle` und Text `color-text-muted` (in der Quelle Slate-Töne der Bibliothek).
+- Schrift 12px (`sm`) bzw. 14px (`md`), Gewicht 500.
+- Das Label immer beibehalten: success und danger unterscheiden sich nur im Farbton.
+- Gezeigt auf `color-surface`, der Fläche für Karten und Kacheln (in der Quelle die Slate-Kartenfläche der Bibliothek).
+- Kontrast: Die Statusfarben erfüllen in beiden Themes auf `color-status-*-bg`, `color-bg` und `color-surface` mindestens WCAG AA (4,5:1).

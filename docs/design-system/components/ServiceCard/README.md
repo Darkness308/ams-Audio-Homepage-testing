@@ -1,13 +1,13 @@
-A card that presents one service line: icon well, title, description, four feature bullets and a "Mehr erfahren" row.
+Eine Karte, die einen Leistungsbereich vorstellt: Icon-Fläche, Titel, Beschreibung, vier Feature-Punkte und eine Zeile „Mehr erfahren“.
 
-Hand-written from `ServiceCard` in `src/components/AMSAudioHomepage.tsx`.
+Von Hand nachgebaut aus `ServiceCard` in `src/components/AMSAudioHomepage.tsx`.
 
-- Props in the source: `icon` (lucide component), `title`, `description`, `features: string[]`.
-- `surface-card-strong` fill, 1px `border-subtle`, `radius-2xl`, `space-8` padding, 4px backdrop blur.
-- Icon well 56px, `radius-xl`, gradient `stone-800` → `stone-900`, border `border-hover` (hover `border-well-hover`); icon 24px `stone-400`.
-- Title `title-card` in `stone-200`; description `body-sm` in `stone-500`; bullets are 4px `stone-600` dots with `stone-400` text.
-- Hover (700ms, ease-out): border `border-strong-hover`, fill `surface-card-hover`, well scales 1.05, icon and bullets brighten, title turns `white`, the "Mehr erfahren" row brightens to `stone-200` and its gap widens.
-- Title in `title-card`, description in `body-sm`, bullets in `list-sm`.
-- Contrast: the `stone-500` description reaches 4.1:1 and the `stone-600` "Mehr erfahren" row 2.6:1 on `neutral-950`, both below WCAG AA. For new work use `stone-400`.
-- In the source the whole card is a `div` with `cursor-pointer` and no link, so it cannot be reached by keyboard. When rebuilding it with a real destination, render "Mehr erfahren" as `<a href>`; the stylesheet then lights the card on `:focus-within` and outlines the link on `:focus-visible`. Without a destination, drop `cursor: pointer`.
-- Lay out in a 1/2/3-column grid with `space-6` gaps; cards share equal height.
+- Props in der Quelle: `icon` (Lucide-Komponente), `title`, `description`, `features: string[]`.
+- Fläche `color-surface-raised`, 1px `color-border-subtle`, `radius-2xl`, Innenabstand `space-8`, 4px Backdrop-Blur.
+- Icon-Fläche 56px, `radius-xl`, Fläche `color-surface-well` (in der Quelle ein Verlauf von Stone-800 nach Stone-900), Rand `color-border` (bei Hover `color-border-strong`); Icon 24px in `color-text-muted`.
+- Titel im Stil `title-card` in `color-text`; Beschreibung im Stil `body-sm` in `color-text-subtle`; die Aufzählung in 14px/20px (Gewicht 400) in `color-text-muted`, mit 4px-Punkten in `color-text-subtle`.
+- Hover (700ms, ease-out): Rand `color-border-strong`, Fläche `color-surface-hover`, die Icon-Fläche skaliert auf 1,05, Icon und Punkte werden kräftiger (`color-text`, `color-text-body`), der Titel wechselt zu `color-text-strong`, die Zeile „Mehr erfahren“ wechselt zu `color-text` und ihr Abstand wird größer. Unter `prefers-reduced-motion` entfallen Skalierung und Abstandsänderung.
+- Kontrast: Beschreibung und „Mehr erfahren“ in `color-text-subtle` erreichen auf allen Flächen mindestens 4,99:1 (dunkel) bzw. 4,58:1 (hell); alle Textfarben der Karte erfüllen damit WCAG AA (4,5:1).
+- In der Quelle ist die ganze Karte ein `div` mit `cursor-pointer` und ohne Link, daher per Tastatur nicht erreichbar. Wird sie mit einem echten Ziel nachgebaut, „Mehr erfahren“ als `<a href>` rendern; das Stylesheet hebt die Karte dann über `:focus-within` hervor und zeigt am Link über `:focus-visible` den Fokusrahmen in `color-focus-ring`. Die Zeile ist mindestens `size-target-min` hoch. Ohne Ziel `cursor: pointer` entfernen.
+- Die Vorschau nutzt neutrale Texte. Werbeaussagen und Angaben zur Normkonformität nur mit Beleg einsetzen.
+- Im 1-, 2- oder 3-spaltigen Raster mit `space-6` Abständen anordnen; die Karten sind gleich hoch.
