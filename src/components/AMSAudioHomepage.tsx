@@ -428,11 +428,9 @@ export default function AMSAudioHomepage() {
       <StatsSection>
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
+          {/* Nur belegte Kennzahlen (docs/projekt/PLAN.md, E5) */}
+          <div className="grid grid-cols-1 justify-items-center">
             <StatCounter value="25" label="Jahre Erfahrung" />
-            <StatCounter value="500" suffix="+" label="Projekte" />
-            <StatCounter value="98" suffix="%" label="Erfolgsquote" />
-            <StatCounter value="50" suffix="+" label="Partner" />
           </div>
         </div>
       </section>

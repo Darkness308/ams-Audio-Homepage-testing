@@ -32,12 +32,20 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Validate PR number
+      # The PR number comes from the trusted workflow_run event, never from the
+      # PR-controlled artifact; the artifact value must match or the run fails.
+      - name: Determine PR number
         id: pr
+        env:
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
         run: |
-          PR_NUMBER="$(cat ./preview/pr-number)"
           if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
-            echo "Invalid PR number in artifact" >&2
+            echo "No pull request attached to this workflow run" >&2
+            exit 1
+          fi
+          ARTIFACT_PR="$(cat ./preview/pr-number 2>/dev/null || true)"
+          if [ "$ARTIFACT_PR" != "$PR_NUMBER" ]; then
+            echo "PR number in artifact ($ARTIFACT_PR) does not match the workflow run ($PR_NUMBER)" >&2
             exit 1
           fi
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
