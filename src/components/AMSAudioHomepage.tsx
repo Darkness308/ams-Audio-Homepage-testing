@@ -5,6 +5,19 @@ import {
   Scan, Target, Shield, TrendingUp, Clock,
   Database, BarChart3, TreePine, Home, Factory
 } from 'lucide-react';
+import {
+  AcoustiScanSection,
+  BrandsSection,
+  CTASection,
+  FooterSection,
+  HeroSection,
+  HolzbauSection,
+  NavigationSection,
+  ServicesSection,
+  StatsSection,
+  TeamSection,
+  Vision2030Section,
+} from './SectionWrappers';
 
 // Soft Flowing Wave Background
 const SoftWaveBackground = () => {
@@ -322,6 +335,7 @@ export default function AMSAudioHomepage() {
   return (
     <div className="min-h-screen bg-neutral-950 text-white overflow-x-hidden font-inter">
       {/* Navigation */}
+      <NavigationSection>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrollY > 50 ? 'bg-neutral-950/95 backdrop-blur-xl border-b border-stone-900/50' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
@@ -343,8 +357,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </nav>
+      </NavigationSection>
 
       {/* Hero Section */}
+      <HeroSection>
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <WarmGlowOrbs />
         <SoftWaveBackground />
@@ -390,8 +406,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </HeroSection>
 
       {/* Brands Bar */}
+      <BrandsSection>
       <section className="py-16 border-y border-stone-900/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-16 md:gap-24">
@@ -404,8 +422,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </BrandsSection>
 
       {/* Stats Section */}
+      <StatsSection>
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
@@ -416,8 +436,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </StatsSection>
 
       {/* Services Section */}
+      <ServicesSection>
       <section id="leistungen" className="py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -437,8 +459,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </ServicesSection>
 
       {/* AcoustiScan Feature Section */}
+      <AcoustiScanSection>
       <section id="acoustiscan" className="py-28 relative overflow-hidden">
         <WarmGlowOrbs />
         <div className="max-w-7xl mx-auto px-6 relative">
@@ -499,8 +523,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </AcoustiScanSection>
 
       {/* Vision 2030 */}
+      <Vision2030Section>
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-gradient-to-br from-stone-900/50 to-neutral-950 border border-stone-800/50 rounded-3xl p-10 md:p-14 relative overflow-hidden">
@@ -539,8 +565,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </Vision2030Section>
 
       {/* Holzbau */}
+      <HolzbauSection>
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -590,8 +618,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </HolzbauSection>
 
       {/* Team */}
+      <TeamSection>
       <section id="über-uns" className="py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
@@ -619,8 +649,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </TeamSection>
 
       {/* CTA */}
+      <CTASection>
       <section id="kontakt" className="py-28">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="relative bg-gradient-to-br from-stone-900/60 to-neutral-950 border border-stone-800/50 rounded-3xl p-14">
@@ -646,8 +678,10 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </section>
+      </CTASection>
 
       {/* Footer */}
+      <FooterSection>
       <footer className="py-14 border-t border-stone-900/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-14 mb-14">
@@ -689,6 +723,7 @@ export default function AMSAudioHomepage() {
           </div>
         </div>
       </footer>
+      </FooterSection>
     </div>
   );
 }
