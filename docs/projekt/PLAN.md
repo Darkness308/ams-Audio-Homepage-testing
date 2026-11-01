@@ -35,6 +35,7 @@ Die bestehenden Dokumente (SOPs, ADRs, Agentenprofile) gehen von einem Entwickle
 | E6 | **Gehärtete CI nicht auf `main`** | Production läuft noch mit den alten Workflows. Freigegeben: Pull Request nach `main`. | Merge nach grüner CI und Copilot-Review | SiD |
 | E7 | **Lizenz** | Unter Vorbehalt auf „Alle Rechte vorbehalten“ umgestellt. Offen: vertragliche Aufteilung der Rechte zwischen SiD und MSH Audio. | Vereinbarung SiD und MSH Audio | SiD, Marc Schneider-Handrup |
 | E8 | **Mehrere Agenten** | Entschieden: Copilot übernimmt Reviews, Codex optional. Umsetzung über ADR-0006 (eine Projektleitung, alles über Pull Requests). | Branch-Schutz aktivieren | SiD |
+| E10 | **Repo ist öffentlich** | Das GitHub-Repo ist öffentlich (geprüft am 2026-11-01). Projektplan, Engpässe, rechtliche Einschätzungen und künftige Inhaltsbelege sind für jeden lesbar. Belege aus dem Drive (Referenzen, Vita) werden deshalb vorerst nicht im Repo abgelegt. | Entscheidung: Repo privat stellen (GitHub Pages braucht dann einen kostenpflichtigen Plan; entfällt mit dem eigenen Server) oder interne Dokumente in ein privates Repo verschieben | SiD |
 | E9 | **Auftragsverarbeitung** | MSH Audio ist Betreiber, der Server gehört SiD. Verarbeitet SiD dabei personenbezogene Daten (Server-Logs, Kontaktformular), braucht es einen Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). | Vertrag vor dem Umzug auf den Server | SiD, Marc Schneider-Handrup, extern optional |
 
 ## 3. Phasen
