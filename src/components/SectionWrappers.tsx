@@ -48,7 +48,7 @@ function getSectionStatus(): { total: number; loaded: number; errors: number } {
 }
 
 function logSectionStatus(): void {
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     const status = getSectionStatus();
     console.log(`[App] Sections: ${status.loaded}/${status.total} loaded, ${status.errors} errors`);
   }
