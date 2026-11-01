@@ -30,7 +30,7 @@ Die bestehenden Dokumente (SOPs, ADRs, Agentenprofile) gehen von einem Entwickle
 | E1 | **Zugänge** | Geklärt: SiD besitzt Repo, Domain und Server. Offen sind die Admin-Klicks aus ADR-0006 (Branch-Schutz, Freigabe für Production) und 2FA/Notfallzugang. | Einrichtung laut ADR-0006 | SiD |
 | E2 | **Pflichtseiten fehlen** | Die Domain ist nicht live. Der Workflow `deploy.yml` veröffentlicht aber bei jedem Push auf `main` auf GitHub Pages; ob die Seite dort öffentlich erreichbar ist, muss in den Pages-Einstellungen geprüft werden. „AMS Audio Group“ und „Ruhrgebiet“ sind korrigiert. | Pages-Einstellung prüfen; Impressum und Datenschutz vor jedem Livegang | SiD, Claude |
 | E3 | **Kein Freigabemodell für eine Person** | So wie in SOP-002 beschrieben, würde Branch-Schutz jeden Merge blockieren. Ohne ihn bleiben die Regeln Papier. | ADR-0006 (siehe oben), danach Einstellungen in GitHub | Claude, dann Auftraggeber |
-| E4 | **Hosting-Entscheidung offen** | ADR-0005 und alle Workflows setzen auf GitHub Pages, der Auftrag auf den eigenen Ubuntu-Server (gehört SiD, installiert, nicht eingerichtet). Die Domain ist noch nicht live. Sicherheits-Header und das RAG-Backend gehen nur mit eigenem Server. | ADR-0008 Hosting; SSH-Zugang zum Server | Claude, SiD |
+| E4 | **Hosting-Entscheidung offen** | ADR-0005 und alle Workflows setzen auf GitHub Pages, der Auftrag auf den eigenen Ubuntu-Server (gehört SiD, installiert, nicht eingerichtet). Die Domain ist noch nicht live. Sicherheits-Header und das RAG-Backend gehen nur mit eigenem Server. | ADR-0009 Hosting; SSH-Zugang zum Server | Claude, SiD |
 | E5 | **Unbelegte Aussagen** | Geklärt: 25 Jahre Erfahrung, Steffen entfernt, SiD stimmt der Nennung zu. Offen: „500+ Projekte“, „98 % Erfolgsquote“, „50+ Partner“, „erste iPad-App“, Berechtigung zum Titel „Ingenieur“ (Ingenieurgesetz NRW). Werbeaussagen müssen belegbar sein (§ 5 UWG). | Belege oder Streichung | Marc Schneider-Handrup |
 | E6 | **Gehärtete CI nicht auf `main`** | Production läuft noch mit den alten Workflows. Freigegeben: Pull Request nach `main`. | Merge nach grüner CI und Copilot-Review | SiD |
 | E7 | **Lizenz** | Unter Vorbehalt auf „Alle Rechte vorbehalten“ umgestellt. Offen: vertragliche Aufteilung der Rechte zwischen SiD und MSH Audio. | Vereinbarung SiD und MSH Audio | SiD, Marc Schneider-Handrup |
@@ -42,7 +42,7 @@ Die bestehenden Dokumente (SOPs, ADRs, Agentenprofile) gehen von einem Entwickle
 
 | Phase | Inhalt | Voraussetzung |
 |-------|--------|---------------|
-| **0 Governance** | ADR-0006 Freigabemodell, ADR-0008 Hosting, Lizenz, Zugänge klären, Branch-Schutz, Roadmap v2 mit Reifegradmatrix und Scorecard | E1, E3 |
+| **0 Governance** | ADR-0006 Freigabemodell, ADR-0009 Hosting, Lizenz, Zugänge klären, Branch-Schutz, Roadmap v2 mit Reifegradmatrix und Scorecard | E1, E3 |
 | **1 Stylebook v2** | siehe Abschnitt 4 | läuft |
 | **2 Einfache Website** | Neuaufbau auf dem Stylebook, Tailwind v4, Impressum und Datenschutz, nur belegte Inhalte | E2, E5, Phase 1 |
 | **3 Server** | Ubuntu absichern, Webserver mit HTTPS und Sicherheits-Headern, Deploy über Git | E1, E4 |
