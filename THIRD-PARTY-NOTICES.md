@@ -4,7 +4,7 @@ Diese Website liefert folgende Bestandteile Dritter aus. Es gelten die jeweilige
 
 | Bestandteil | Version | Lizenz | Lizenztext |
 |-------------|---------|--------|------------|
-| Inter (Schrift, über @fontsource/inter) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-inter.txt` |
+| Inter Variable (Schrift, über @fontsource-variable/inter) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-inter.txt` |
 | Outfit (Schrift, über @fontsource/outfit) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-outfit.txt` |
 | DM Sans (Schrift, über @fontsource/dm-sans) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-dm-sans.txt` |
 | JetBrains Mono (Schrift, über @fontsource/jetbrains-mono) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-jetbrains-mono.txt` |

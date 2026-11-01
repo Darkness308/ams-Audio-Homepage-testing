@@ -19,7 +19,7 @@ check() {
 
 # 1. Keine Schriften oder Skripte von Google-Servern (LG München I, 3 O 17493/20).
 check "Keine Google-Fonts-Einbindung im ausgelieferten Code" \
-  'fonts\.(googleapis|gstatic)\.com' src index.html public vite.config.ts
+  'fonts\.(googleapis|gstatic)\.com' src index.html public vite.config.ts docs/design-system
 
 # 2. Fokus nie per CSS abschalten (WCAG 2.4.7).
 check "Kein 'outline: none' oder 'outline: 0' in eigenem CSS" \
