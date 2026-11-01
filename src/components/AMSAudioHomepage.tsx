@@ -428,11 +428,9 @@ export default function AMSAudioHomepage() {
       <StatsSection>
       <section className="py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-16">
-            <StatCounter value="15" suffix="+" label="Jahre Erfahrung" />
-            <StatCounter value="500" suffix="+" label="Projekte" />
-            <StatCounter value="98" suffix="%" label="Erfolgsquote" />
-            <StatCounter value="50" suffix="+" label="Partner" />
+          {/* Nur belegte Kennzahlen (docs/projekt/PLAN.md, E5) */}
+          <div className="grid grid-cols-1 justify-items-center">
+            <StatCounter value="25" label="Jahre Erfahrung" />
           </div>
         </div>
       </section>
@@ -628,12 +626,11 @@ export default function AMSAudioHomepage() {
             <h2 className="text-4xl md:text-5xl font-extralight mb-8 tracking-tight text-stone-200">
               Das <span className="text-gradient-warm font-light">Team</span>
             </h2>
-            <p className="text-lg text-stone-500 max-w-2xl mx-auto font-light">Erfahrene Akustiker und strategische Berater.</p>
+            <p className="text-lg text-stone-500 max-w-2xl mx-auto font-light">Akustik-Praxis und strategische Beratung.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              { name: 'Marc Schneider-Handrup', role: 'Gründer & Lead Engineer', brand: 'MSH Audio', desc: 'Freelance Ton-Ingenieur mit 15+ Jahren Erfahrung.' },
-              { name: 'Steffen', role: 'Partner', brand: 'AMS Audio', desc: 'Akustik-Beratung und Geschäftsentwicklung.' },
+              { name: 'Marc Schneider-Handrup', role: 'Gründer & Lead Engineer', brand: 'MSH Audio', desc: 'Freelance Ton-Ingenieur mit 25 Jahren Erfahrung.' },
               { name: 'SiD Consulting', role: 'Strategischer Berater', brand: 'EKS-Methodik', desc: 'Engpasskonzentrierte Strategie für Wachstum.' }
             ].map((member, idx) => (
               <div key={idx} className="bg-stone-900/30 border border-stone-800/50 rounded-2xl p-10 text-center hover:border-stone-700/50 transition-all duration-700 group hover:-translate-y-1">
@@ -709,13 +706,13 @@ export default function AMSAudioHomepage() {
             <div>
               <div className="text-xs font-medium text-stone-400 mb-5 tracking-wide uppercase">Kontakt</div>
               <ul className="space-y-4 text-stone-600 text-sm font-light">
-                <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-stone-600" />Ruhrgebiet, NRW</li>
+                <li className="flex items-center gap-3"><MapPin className="w-4 h-4 text-stone-600" />Nachrodt-Wiblingwerde, NRW</li>
                 <li className="flex items-center gap-3"><Mail className="w-4 h-4 text-stone-600" />info@ams-audio.com</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-stone-900/50 pt-10 flex flex-col md:flex-row items-center justify-between gap-5">
-            <div className="text-stone-700 text-sm font-light">© 2025 AMS Audio Group</div>
+            <div className="text-stone-700 text-sm font-light">© 2026 AMS Audio – ein Angebot von MSH Audio</div>
             <div className="flex items-center gap-8 text-stone-700 text-sm font-light">
               <span className="hover:text-stone-400 cursor-pointer transition-colors duration-300">Impressum</span>
               <span className="hover:text-stone-400 cursor-pointer transition-colors duration-300">Datenschutz</span>

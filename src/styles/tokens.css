@@ -1,0 +1,278 @@
+/* AMS Audio — erzeugt aus tokens/ams.tokens.json. Nicht von Hand bearbeiten: npm run tokens */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: oklch(0.1448 0 0);
+  --color-surface: oklch(0.2161 0.0061 56.04 / 0.3);
+  --color-surface-raised: oklch(0.1448 0 0 / 0.8);
+  --color-surface-hover: oklch(0.2046 0 0 / 0.8);
+  --color-surface-well: oklch(0.2685 0.0063 34.3 / 0.5);
+  --color-surface-overlay: oklch(0.1448 0 0 / 0.95);
+  --color-text-strong: oklch(0.9699 0.0013 106.42);
+  --color-text: oklch(0.9232 0.0026 48.72);
+  --color-text-body: oklch(0.8687 0.0043 56.37);
+  --color-text-muted: oklch(0.7161 0.0091 56.26);
+  --color-text-subtle: oklch(0.6271 0.0104 62.49);
+  --color-border-subtle: oklch(0.2685 0.0063 34.3 / 0.5);
+  --color-border: oklch(0.3741 0.0087 67.56 / 0.5);
+  --color-border-strong: oklch(0.4444 0.0096 73.64 / 0.5);
+  --color-border-control: oklch(0.5534 0.0116 58.07);
+  --color-hairline: oklch(0.2161 0.0061 56.04 / 0.5);
+  --color-focus-ring: oklch(0.9232 0.0026 48.72);
+  --color-selection: oklch(0.7161 0.0091 56.26 / 0.3);
+  --color-action-primary-bg: oklch(0.9699 0.0013 106.42);
+  --color-action-primary-bg-hover: oklch(1 0 0);
+  --color-action-primary-fg: oklch(0.2046 0 0);
+  --color-action-secondary-border: oklch(0.3741 0.0087 67.56);
+  --color-action-secondary-fg: oklch(0.7161 0.0091 56.26);
+  --color-action-secondary-fg-hover: oklch(0.9232 0.0026 48.72);
+  --color-status-success: oklch(0.8003 0.1821 151.71);
+  --color-status-success-bg: oklch(0.3925 0.0896 152.54 / 0.5);
+  --color-status-success-border: oklch(0.4479 0.1083 151.33);
+  --color-status-warning: oklch(0.8606 0.1731 91.94);
+  --color-status-warning-bg: oklch(0.421 0.0897 57.71 / 0.5);
+  --color-status-warning-border: oklch(0.4762 0.1034 61.91);
+  --color-status-danger: oklch(0.7106 0.1661 22.22);
+  --color-status-danger-bg: oklch(0.3958 0.1331 25.72 / 0.5);
+  --color-status-danger-border: oklch(0.4437 0.1613 26.9);
+  --color-status-info: oklch(0.7137 0.1434 254.62);
+  --color-status-info-bg: oklch(0.3791 0.1378 265.52 / 0.5);
+  --color-status-info-border: oklch(0.4244 0.1809 265.64);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: oklch(0.9848 0.0013 106.42);
+  --color-surface: oklch(1 0 0);
+  --color-surface-raised: oklch(1 0 0);
+  --color-surface-hover: oklch(0.9699 0.0013 106.42);
+  --color-surface-well: oklch(0.9699 0.0013 106.42);
+  --color-surface-overlay: oklch(0.9848 0.0013 106.42 / 0.95);
+  --color-text-strong: oklch(0.1469 0.0041 49.25);
+  --color-text: oklch(0.2161 0.0061 56.04);
+  --color-text-body: oklch(0.2685 0.0063 34.3);
+  --color-text-muted: oklch(0.4444 0.0096 73.64);
+  --color-text-subtle: oklch(0.5107 0.0109 62.43);
+  --color-border-subtle: oklch(0.9232 0.0026 48.72);
+  --color-border: oklch(0.8687 0.0043 56.37);
+  --color-border-strong: oklch(0.7161 0.0091 56.26);
+  --color-border-control: oklch(0.5534 0.0116 58.07);
+  --color-hairline: oklch(0.9232 0.0026 48.72);
+  --color-focus-ring: oklch(0.2161 0.0061 56.04);
+  --color-selection: oklch(0.5534 0.0116 58.07 / 0.25);
+  --color-action-primary-bg: oklch(0.2161 0.0061 56.04);
+  --color-action-primary-bg-hover: oklch(0.2685 0.0063 34.3);
+  --color-action-primary-fg: oklch(0.9848 0.0013 106.42);
+  --color-action-secondary-border: oklch(0.8687 0.0043 56.37);
+  --color-action-secondary-fg: oklch(0.3741 0.0087 67.56);
+  --color-action-secondary-fg-hover: oklch(0.2161 0.0061 56.04);
+  --color-status-success: oklch(0.4479 0.1083 151.33);
+  --color-status-success-bg: oklch(0.9819 0.0181 155.83);
+  --color-status-success-border: oklch(0.925 0.0806 155.99);
+  --color-status-warning: oklch(0.4762 0.1034 61.91);
+  --color-status-warning-bg: oklch(0.9873 0.0262 102.21);
+  --color-status-warning-border: oklch(0.9451 0.1243 101.54);
+  --color-status-danger: oklch(0.4437 0.1613 26.9);
+  --color-status-danger-bg: oklch(0.9705 0.0129 17.38);
+  --color-status-danger-border: oklch(0.8845 0.0593 18.33);
+  --color-status-info: oklch(0.4244 0.1809 265.64);
+  --color-status-info-bg: oklch(0.9705 0.0142 254.6);
+  --color-status-info-border: oklch(0.8823 0.0571 254.13);
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --color-bg: oklch(0.9848 0.0013 106.42);
+    --color-surface: oklch(1 0 0);
+    --color-surface-raised: oklch(1 0 0);
+    --color-surface-hover: oklch(0.9699 0.0013 106.42);
+    --color-surface-well: oklch(0.9699 0.0013 106.42);
+    --color-surface-overlay: oklch(0.9848 0.0013 106.42 / 0.95);
+    --color-text-strong: oklch(0.1469 0.0041 49.25);
+    --color-text: oklch(0.2161 0.0061 56.04);
+    --color-text-body: oklch(0.2685 0.0063 34.3);
+    --color-text-muted: oklch(0.4444 0.0096 73.64);
+    --color-text-subtle: oklch(0.5107 0.0109 62.43);
+    --color-border-subtle: oklch(0.9232 0.0026 48.72);
+    --color-border: oklch(0.8687 0.0043 56.37);
+    --color-border-strong: oklch(0.7161 0.0091 56.26);
+    --color-border-control: oklch(0.5534 0.0116 58.07);
+    --color-hairline: oklch(0.9232 0.0026 48.72);
+    --color-focus-ring: oklch(0.2161 0.0061 56.04);
+    --color-selection: oklch(0.5534 0.0116 58.07 / 0.25);
+    --color-action-primary-bg: oklch(0.2161 0.0061 56.04);
+    --color-action-primary-bg-hover: oklch(0.2685 0.0063 34.3);
+    --color-action-primary-fg: oklch(0.9848 0.0013 106.42);
+    --color-action-secondary-border: oklch(0.8687 0.0043 56.37);
+    --color-action-secondary-fg: oklch(0.3741 0.0087 67.56);
+    --color-action-secondary-fg-hover: oklch(0.2161 0.0061 56.04);
+    --color-status-success: oklch(0.4479 0.1083 151.33);
+    --color-status-success-bg: oklch(0.9819 0.0181 155.83);
+    --color-status-success-border: oklch(0.925 0.0806 155.99);
+    --color-status-warning: oklch(0.4762 0.1034 61.91);
+    --color-status-warning-bg: oklch(0.9873 0.0262 102.21);
+    --color-status-warning-border: oklch(0.9451 0.1243 101.54);
+    --color-status-danger: oklch(0.4437 0.1613 26.9);
+    --color-status-danger-bg: oklch(0.9705 0.0129 17.38);
+    --color-status-danger-border: oklch(0.8845 0.0593 18.33);
+    --color-status-info: oklch(0.4244 0.1809 265.64);
+    --color-status-info-bg: oklch(0.9705 0.0142 254.6);
+    --color-status-info-border: oklch(0.8823 0.0571 254.13);
+  }
+}
+
+:root {
+  --font-sans: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-14: 3.5rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-28: 7rem;
+  --space-0-75: 0.1875rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+  --size-container: 80rem;
+  --size-container-narrow: 56rem;
+  --size-measure: 42rem;
+  --size-target-min: 1.5rem;
+  --size-target-comfortable: 2.75rem;
+  --size-focus-width: 0.125rem;
+  --size-focus-offset: 0.125rem;
+  --shadow-2xl: 0px 25px 50px -12px oklch(0 0 0 / 0.25);
+  --duration-fast: 300ms;
+  --duration-medium: 500ms;
+  --duration-slow: 700ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --text-display-hero: clamp(3rem, 2rem + 5vw, 6rem);
+  --text-display-section: clamp(2.25rem, 2rem + 1.25vw, 3rem);
+  --text-stat-number: clamp(3rem, 2.75rem + 1.25vw, 3.75rem);
+  --text-figure: 2.25rem;
+  --text-lead: clamp(1.125rem, 1.0833rem + 0.2083vw, 1.25rem);
+  --text-title-card: 1.25rem;
+  --text-title-sm: 1.125rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-label-caps: 0.875rem;
+  --text-eyebrow: 0.75rem;
+  --text-label-xs-caps: 0.75rem;
+  --text-button: 1rem;
+  --text-mono-sm: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-medium: 0ms;
+    --duration-slow: 0ms;
+  }
+}
+
+.type-display-hero {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-display-hero);
+  font-weight: 200;
+  line-height: 1.1;
+  letter-spacing: -0.15rem;
+}
+.type-display-section {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-display-section);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.075rem;
+}
+.type-stat-number {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-stat-number);
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.0938rem;
+}
+.type-figure {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-figure);
+  font-weight: 300;
+  line-height: 1.1;
+}
+.type-lead {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.type-title-card {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-title-card);
+  font-weight: 500;
+  line-height: 1.4;
+}
+.type-title-sm {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-title-sm);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.0281rem;
+}
+.type-body {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.type-body-sm {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-body-sm);
+  font-weight: 400;
+  line-height: 1.6;
+}
+.type-label-caps {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-label-caps);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.0219rem;
+  text-transform: uppercase;
+}
+.type-eyebrow {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.0187rem;
+}
+.type-label-xs-caps {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-label-xs-caps);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.0187rem;
+  text-transform: uppercase;
+}
+.type-button {
+  font-family: "Inter Variable", "Inter Fallback", system-ui, sans-serif;
+  font-size: var(--text-button);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.type-mono-sm {
+  font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-size: var(--text-mono-sm);
+  font-weight: 400;
+  line-height: 1.4;
+}

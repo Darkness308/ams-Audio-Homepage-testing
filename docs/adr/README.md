@@ -21,6 +21,8 @@ Kein ADR wird gelöscht — veraltete Entscheidungen erhalten den Status `Deprec
 | ADR-0003 | SSOT — Alle Inhalte aus `/docs/content/`       | Accepted | 2026-08-04 |
 | ADR-0004 | ChromaDB-Pipeline — Dev-only, Fallback         | Accepted | 2026-08-04 |
 | ADR-0005 | Primäre Produktionsdomäne — www.ams-audio.com  | Accepted | 2026-08-04 |
+| ADR-0006 | Freigabemodell und erzwungene Leitplanken      | Proposed | 2026-11-01 |
+| ADR-0007 | Design-Tokens als einzige Quelle (Stylebook v2) | Proposed | 2026-11-01 |
 
 ## Neue ADRs erstellen
 

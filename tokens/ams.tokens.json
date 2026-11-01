@@ -1,0 +1,1494 @@
+{
+  "$description": "AMS Audio Design-Tokens. Format: Design Tokens Format Module 2025.10 (W3C Community Group). Einzige Quelle für Website und Stylebook; CSS wird mit scripts/build-tokens.mjs erzeugt.",
+  "color": {
+    "$type": "color",
+    "primitive": {
+      "stone": {
+        "50": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9848,
+              0.0013,
+              106.42
+            ],
+            "hex": "#fafaf9"
+          },
+          "$description": "Tailwind stone"
+        },
+        "100": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9699,
+              0.0013,
+              106.42
+            ],
+            "hex": "#f5f5f4"
+          },
+          "$description": "Tailwind stone"
+        },
+        "200": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9232,
+              0.0026,
+              48.72
+            ],
+            "hex": "#e7e5e4"
+          },
+          "$description": "Tailwind stone"
+        },
+        "300": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.8687,
+              0.0043,
+              56.37
+            ],
+            "hex": "#d6d3d1"
+          },
+          "$description": "Tailwind stone"
+        },
+        "400": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.7161,
+              0.0091,
+              56.26
+            ],
+            "hex": "#a8a29e"
+          },
+          "$description": "Tailwind stone"
+        },
+        "450": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.6271,
+              0.0104,
+              62.49
+            ],
+            "hex": "#8d8782"
+          },
+          "$description": "AMS-Zwischenstufe, berechnet in OKLCH zwischen den Nachbarstufen für WCAG-Kontrast"
+        },
+        "500": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.5534,
+              0.0116,
+              58.07
+            ],
+            "hex": "#78716c"
+          },
+          "$description": "Tailwind stone"
+        },
+        "550": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.5107,
+              0.0109,
+              62.43
+            ],
+            "hex": "#6b6560"
+          },
+          "$description": "AMS-Zwischenstufe, berechnet in OKLCH zwischen den Nachbarstufen für WCAG-Kontrast"
+        },
+        "600": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4444,
+              0.0096,
+              73.64
+            ],
+            "hex": "#57534e"
+          },
+          "$description": "Tailwind stone"
+        },
+        "700": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3741,
+              0.0087,
+              67.56
+            ],
+            "hex": "#44403c"
+          },
+          "$description": "Tailwind stone"
+        },
+        "800": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2685,
+              0.0063,
+              34.3
+            ],
+            "hex": "#292524"
+          },
+          "$description": "Tailwind stone"
+        },
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2161,
+              0.0061,
+              56.04
+            ],
+            "hex": "#1c1917"
+          },
+          "$description": "Tailwind stone"
+        },
+        "950": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.1469,
+              0.0041,
+              49.25
+            ],
+            "hex": "#0c0a09"
+          },
+          "$description": "Tailwind stone"
+        }
+      },
+      "neutral": {
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2046,
+              0.0,
+              0
+            ],
+            "hex": "#171717"
+          }
+        },
+        "950": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.1448,
+              0.0,
+              0
+            ],
+            "hex": "#0a0a0a"
+          },
+          "$description": "Seitengrund dunkel"
+        }
+      },
+      "white": {
+        "$value": {
+          "colorSpace": "oklch",
+          "components": [
+            1.0,
+            0.0,
+            0
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "green": {
+        "50": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9819,
+              0.0181,
+              155.83
+            ],
+            "hex": "#f0fdf4"
+          }
+        },
+        "200": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.925,
+              0.0806,
+              155.99
+            ],
+            "hex": "#bbf7d0"
+          }
+        },
+        "400": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.8003,
+              0.1821,
+              151.71
+            ],
+            "hex": "#4ade80"
+          }
+        },
+        "800": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4479,
+              0.1083,
+              151.33
+            ],
+            "hex": "#166534"
+          }
+        },
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3925,
+              0.0896,
+              152.54
+            ],
+            "hex": "#14532d"
+          }
+        }
+      },
+      "yellow": {
+        "50": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9873,
+              0.0262,
+              102.21
+            ],
+            "hex": "#fefce8"
+          }
+        },
+        "200": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9451,
+              0.1243,
+              101.54
+            ],
+            "hex": "#fef08a"
+          }
+        },
+        "400": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.8606,
+              0.1731,
+              91.94
+            ],
+            "hex": "#facc15"
+          }
+        },
+        "800": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4762,
+              0.1034,
+              61.91
+            ],
+            "hex": "#854d0e"
+          }
+        },
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.421,
+              0.0897,
+              57.71
+            ],
+            "hex": "#713f12"
+          }
+        }
+      },
+      "red": {
+        "50": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9705,
+              0.0129,
+              17.38
+            ],
+            "hex": "#fef2f2"
+          }
+        },
+        "200": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.8845,
+              0.0593,
+              18.33
+            ],
+            "hex": "#fecaca"
+          }
+        },
+        "400": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.7106,
+              0.1661,
+              22.22
+            ],
+            "hex": "#f87171"
+          }
+        },
+        "800": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4437,
+              0.1613,
+              26.9
+            ],
+            "hex": "#991b1b"
+          }
+        },
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3958,
+              0.1331,
+              25.72
+            ],
+            "hex": "#7f1d1d"
+          }
+        }
+      },
+      "blue": {
+        "50": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9705,
+              0.0142,
+              254.6
+            ],
+            "hex": "#eff6ff"
+          }
+        },
+        "200": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.8823,
+              0.0571,
+              254.13
+            ],
+            "hex": "#bfdbfe"
+          }
+        },
+        "400": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.7137,
+              0.1434,
+              254.62
+            ],
+            "hex": "#60a5fa"
+          }
+        },
+        "800": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4244,
+              0.1809,
+              265.64
+            ],
+            "hex": "#1e40af"
+          }
+        },
+        "900": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3791,
+              0.1378,
+              265.52
+            ],
+            "hex": "#1e3a8a"
+          }
+        }
+      }
+    },
+    "theme": {
+      "dark": {
+        "bg": {
+          "$value": "{color.primitive.neutral.950}",
+          "$description": "Seitengrund"
+        },
+        "surface": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2161,
+              0.0061,
+              56.04
+            ],
+            "hex": "#1c1917",
+            "alpha": 0.3
+          },
+          "$description": "Karten und Kacheln"
+        },
+        "surface-raised": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.1448,
+              0.0,
+              0
+            ],
+            "hex": "#0a0a0a",
+            "alpha": 0.8
+          },
+          "$description": "Hervorgehobene Karten (ServiceCard)"
+        },
+        "surface-hover": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2046,
+              0.0,
+              0
+            ],
+            "hex": "#171717",
+            "alpha": 0.8
+          },
+          "$description": "Kartenfläche bei Hover und Fokus"
+        },
+        "surface-well": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2685,
+              0.0063,
+              34.3
+            ],
+            "hex": "#292524",
+            "alpha": 0.5
+          },
+          "$description": "Icon-Flächen und Chips in Karten"
+        },
+        "surface-overlay": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.1448,
+              0.0,
+              0
+            ],
+            "hex": "#0a0a0a",
+            "alpha": 0.95
+          },
+          "$description": "Navigation nach dem Scrollen"
+        },
+        "text-strong": {
+          "$value": "{color.primitive.stone.100}",
+          "$description": "Wortmarke, stärkste Betonung"
+        },
+        "text": {
+          "$value": "{color.primitive.stone.200}",
+          "$description": "Überschriften, Kennzahlen"
+        },
+        "text-body": {
+          "$value": "{color.primitive.stone.300}",
+          "$description": "Fließtext"
+        },
+        "text-muted": {
+          "$value": "{color.primitive.stone.400}",
+          "$description": "Sekundärtext, Einleitungen, Listen; mindestens 7,0:1 auf allen Flächen"
+        },
+        "text-subtle": {
+          "$value": "{color.primitive.stone.450}",
+          "$description": "Labels, Bildunterschriften, Rechtliches; mindestens 4,99:1 auf allen Flächen"
+        },
+        "border-subtle": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2685,
+              0.0063,
+              34.3
+            ],
+            "hex": "#292524",
+            "alpha": 0.5
+          },
+          "$description": "Dekorative Ränder von Karten und Pills (keine Kontrastpflicht)"
+        },
+        "border": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3741,
+              0.0087,
+              67.56
+            ],
+            "hex": "#44403c",
+            "alpha": 0.5
+          },
+          "$description": "Ränder bei Hover"
+        },
+        "border-strong": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4444,
+              0.0096,
+              73.64
+            ],
+            "hex": "#57534e",
+            "alpha": 0.5
+          },
+          "$description": "Betonte Ränder bei Hover"
+        },
+        "border-control": {
+          "$value": "{color.primitive.stone.500}",
+          "$description": "Ränder von Eingabefeldern und Bedienelementen ohne Text; mindestens 3:1 (WCAG 1.4.11)"
+        },
+        "hairline": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.2161,
+              0.0061,
+              56.04
+            ],
+            "hex": "#1c1917",
+            "alpha": 0.5
+          },
+          "$description": "Trennlinien zwischen Bereichen"
+        },
+        "focus-ring": {
+          "$value": "{color.primitive.stone.200}",
+          "$description": "Fokusrahmen, 2px mit 2px Abstand; 15,8:1 auf dem Seitengrund"
+        },
+        "selection": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.7161,
+              0.0091,
+              56.26
+            ],
+            "hex": "#a8a29e",
+            "alpha": 0.3
+          },
+          "$description": "Textauswahl"
+        },
+        "action-primary-bg": {
+          "$value": "{color.primitive.stone.100}",
+          "$description": "Primärer Button"
+        },
+        "action-primary-bg-hover": {
+          "$value": "{color.primitive.white}"
+        },
+        "action-primary-fg": {
+          "$value": "{color.primitive.neutral.900}",
+          "$description": "Text auf primärem Button; 16,4:1"
+        },
+        "action-secondary-border": {
+          "$value": "{color.primitive.stone.700}",
+          "$description": "Rand des sekundären Buttons (dekorativ, der Button hat ein Textlabel)"
+        },
+        "action-secondary-fg": {
+          "$value": "{color.primitive.stone.400}"
+        },
+        "action-secondary-fg-hover": {
+          "$value": "{color.primitive.stone.200}"
+        },
+        "status-success": {
+          "$value": "{color.primitive.green.400}"
+        },
+        "status-success-bg": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3925,
+              0.0896,
+              152.54
+            ],
+            "hex": "#14532d",
+            "alpha": 0.5
+          }
+        },
+        "status-success-border": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4479,
+              0.1083,
+              151.33
+            ],
+            "hex": "#166534"
+          }
+        },
+        "status-warning": {
+          "$value": "{color.primitive.yellow.400}"
+        },
+        "status-warning-bg": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.421,
+              0.0897,
+              57.71
+            ],
+            "hex": "#713f12",
+            "alpha": 0.5
+          }
+        },
+        "status-warning-border": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4762,
+              0.1034,
+              61.91
+            ],
+            "hex": "#854d0e"
+          }
+        },
+        "status-danger": {
+          "$value": "{color.primitive.red.400}"
+        },
+        "status-danger-bg": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3958,
+              0.1331,
+              25.72
+            ],
+            "hex": "#7f1d1d",
+            "alpha": 0.5
+          }
+        },
+        "status-danger-border": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4437,
+              0.1613,
+              26.9
+            ],
+            "hex": "#991b1b"
+          }
+        },
+        "status-info": {
+          "$value": "{color.primitive.blue.400}"
+        },
+        "status-info-bg": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.3791,
+              0.1378,
+              265.52
+            ],
+            "hex": "#1e3a8a",
+            "alpha": 0.5
+          }
+        },
+        "status-info-border": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.4244,
+              0.1809,
+              265.64
+            ],
+            "hex": "#1e40af"
+          }
+        }
+      },
+      "light": {
+        "bg": {
+          "$value": "{color.primitive.stone.50}",
+          "$description": "Seitengrund"
+        },
+        "surface": {
+          "$value": "{color.primitive.white}",
+          "$description": "Karten und Kacheln"
+        },
+        "surface-raised": {
+          "$value": "{color.primitive.white}",
+          "$description": "Hervorgehobene Karten"
+        },
+        "surface-hover": {
+          "$value": "{color.primitive.stone.100}",
+          "$description": "Kartenfläche bei Hover und Fokus"
+        },
+        "surface-well": {
+          "$value": "{color.primitive.stone.100}",
+          "$description": "Icon-Flächen und Chips"
+        },
+        "surface-overlay": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.9848,
+              0.0013,
+              106.42
+            ],
+            "hex": "#fafaf9",
+            "alpha": 0.95
+          },
+          "$description": "Navigation nach dem Scrollen"
+        },
+        "text-strong": {
+          "$value": "{color.primitive.stone.950}"
+        },
+        "text": {
+          "$value": "{color.primitive.stone.900}",
+          "$description": "Überschriften"
+        },
+        "text-body": {
+          "$value": "{color.primitive.stone.800}",
+          "$description": "Fließtext"
+        },
+        "text-muted": {
+          "$value": "{color.primitive.stone.600}",
+          "$description": "Sekundärtext; mindestens 6,08:1 auf allen Flächen"
+        },
+        "text-subtle": {
+          "$value": "{color.primitive.stone.550}",
+          "$description": "Labels; mindestens 4,58:1 auf allen Flächen"
+        },
+        "border-subtle": {
+          "$value": "{color.primitive.stone.200}",
+          "$description": "Dekorative Ränder"
+        },
+        "border": {
+          "$value": "{color.primitive.stone.300}"
+        },
+        "border-strong": {
+          "$value": "{color.primitive.stone.400}"
+        },
+        "border-control": {
+          "$value": "{color.primitive.stone.500}",
+          "$description": "Ränder von Bedienelementen; mindestens 3:1"
+        },
+        "hairline": {
+          "$value": "{color.primitive.stone.200}"
+        },
+        "focus-ring": {
+          "$value": "{color.primitive.stone.900}",
+          "$description": "Fokusrahmen; 16,7:1 auf dem Seitengrund"
+        },
+        "selection": {
+          "$value": {
+            "colorSpace": "oklch",
+            "components": [
+              0.5534,
+              0.0116,
+              58.07
+            ],
+            "hex": "#78716c",
+            "alpha": 0.25
+          }
+        },
+        "action-primary-bg": {
+          "$value": "{color.primitive.stone.900}"
+        },
+        "action-primary-bg-hover": {
+          "$value": "{color.primitive.stone.800}"
+        },
+        "action-primary-fg": {
+          "$value": "{color.primitive.stone.50}"
+        },
+        "action-secondary-border": {
+          "$value": "{color.primitive.stone.300}"
+        },
+        "action-secondary-fg": {
+          "$value": "{color.primitive.stone.700}"
+        },
+        "action-secondary-fg-hover": {
+          "$value": "{color.primitive.stone.900}"
+        },
+        "status-success": {
+          "$value": "{color.primitive.green.800}"
+        },
+        "status-success-bg": {
+          "$value": "{color.primitive.green.50}"
+        },
+        "status-success-border": {
+          "$value": "{color.primitive.green.200}"
+        },
+        "status-warning": {
+          "$value": "{color.primitive.yellow.800}"
+        },
+        "status-warning-bg": {
+          "$value": "{color.primitive.yellow.50}"
+        },
+        "status-warning-border": {
+          "$value": "{color.primitive.yellow.200}"
+        },
+        "status-danger": {
+          "$value": "{color.primitive.red.800}"
+        },
+        "status-danger-bg": {
+          "$value": "{color.primitive.red.50}"
+        },
+        "status-danger-border": {
+          "$value": "{color.primitive.red.200}"
+        },
+        "status-info": {
+          "$value": "{color.primitive.blue.800}"
+        },
+        "status-info-bg": {
+          "$value": "{color.primitive.blue.50}"
+        },
+        "status-info-border": {
+          "$value": "{color.primitive.blue.200}"
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": [
+          "Inter Variable",
+          "Inter Fallback",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Inter Variable 4.x, selbst gehostet; Fallback mit angepassten Metriken"
+      },
+      "mono": {
+        "$value": [
+          "JetBrains Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "monospace"
+        ],
+        "$description": "Messwerte und Normnummern"
+      }
+    }
+  },
+  "typography": {
+    "display-hero": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 6,
+          "unit": "rem"
+        },
+        "fontWeight": 200,
+        "letterSpacing": {
+          "value": -0.15,
+          "unit": "rem"
+        },
+        "lineHeight": 1.1
+      },
+      "$type": "typography",
+      "$description": "Hero-Überschrift. Gewicht 200 nur ab 48px.",
+      "$extensions": {
+        "com.ams-audio": {
+          "fluid": {
+            "min": {
+              "value": 3,
+              "unit": "rem"
+            },
+            "max": {
+              "value": 6,
+              "unit": "rem"
+            }
+          },
+          "sample": "Klang. Präzision. Harmonie."
+        }
+      }
+    },
+    "display-section": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 3,
+          "unit": "rem"
+        },
+        "fontWeight": 300,
+        "letterSpacing": {
+          "value": -0.075,
+          "unit": "rem"
+        },
+        "lineHeight": 1.2
+      },
+      "$type": "typography",
+      "$description": "Bereichsüberschrift (h2). Gewicht 300, weil sie mobil 36px groß ist.",
+      "$extensions": {
+        "com.ams-audio": {
+          "fluid": {
+            "min": {
+              "value": 2.25,
+              "unit": "rem"
+            },
+            "max": {
+              "value": 3,
+              "unit": "rem"
+            }
+          },
+          "sample": "Schallschutz im Holzbau"
+        }
+      }
+    },
+    "stat-number": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 3.75,
+          "unit": "rem"
+        },
+        "fontWeight": 200,
+        "letterSpacing": {
+          "value": -0.0938,
+          "unit": "rem"
+        },
+        "lineHeight": 1
+      },
+      "$type": "typography",
+      "$description": "Kennzahl. Gewicht 200 nur ab 48px.",
+      "$extensions": {
+        "com.ams-audio": {
+          "fluid": {
+            "min": {
+              "value": 3,
+              "unit": "rem"
+            },
+            "max": {
+              "value": 3.75,
+              "unit": "rem"
+            }
+          },
+          "sample": "25"
+        }
+      }
+    },
+    "figure": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 2.25,
+          "unit": "rem"
+        },
+        "fontWeight": 300,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.1
+      },
+      "$type": "typography",
+      "$description": "Große Zahl in einer Kachel",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "RT60"
+        }
+      }
+    },
+    "lead": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.6
+      },
+      "$type": "typography",
+      "$description": "Einleitungsabsatz; Gewicht 400 statt 300 unter 24px",
+      "$extensions": {
+        "com.ams-audio": {
+          "fluid": {
+            "min": {
+              "value": 1.125,
+              "unit": "rem"
+            },
+            "max": {
+              "value": 1.25,
+              "unit": "rem"
+            }
+          },
+          "sample": "Von der Nachhallmessung bis zur Drohnen-Compliance – wir machen Schall sichtbar, messbar und beherrschbar."
+        }
+      }
+    },
+    "title-card": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.4
+      },
+      "$type": "typography",
+      "$description": "Kartentitel",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "AcoustiScan"
+        }
+      }
+    },
+    "title-sm": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 1.125,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0281,
+          "unit": "rem"
+        },
+        "lineHeight": 1.55
+      },
+      "$type": "typography",
+      "$description": "Kleiner Titel, Wortmarke",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "AMS AUDIO"
+        }
+      }
+    },
+    "body": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 1,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.6
+      },
+      "$type": "typography",
+      "$description": "Fließtext und Listen",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "LiDAR 3D-Raumerfassung"
+        }
+      }
+    },
+    "body-sm": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.6
+      },
+      "$type": "typography",
+      "$description": "Kartenbeschreibungen, Fußzeile",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "Revolutionäre iPad-App mit LiDAR-Technologie für professionelle Raumakustik-Analyse und RT60-Messungen."
+        }
+      }
+    },
+    "label-caps": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 0.875,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0219,
+          "unit": "rem"
+        },
+        "lineHeight": 1.4
+      },
+      "$type": "typography",
+      "$description": "Kennzahl-Label",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "Jahre Erfahrung",
+          "textTransform": "uppercase"
+        }
+      }
+    },
+    "eyebrow": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0187,
+          "unit": "rem"
+        },
+        "lineHeight": 1.4
+      },
+      "$type": "typography",
+      "$description": "Text im Eyebrow-Pill",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "360° Akustik-Kompetenz"
+        }
+      }
+    },
+    "label-xs-caps": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0187,
+          "unit": "rem"
+        },
+        "lineHeight": 1.4
+      },
+      "$type": "typography",
+      "$description": "Kleine Labels in Großbuchstaben (Mindestgröße 12px)",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "Einwohner",
+          "textTransform": "uppercase"
+        }
+      }
+    },
+    "button": {
+      "$value": {
+        "fontFamily": "{font.family.sans}",
+        "fontSize": {
+          "value": 1,
+          "unit": "rem"
+        },
+        "fontWeight": 500,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.5
+      },
+      "$type": "typography",
+      "$description": "Buttons; 14px in der Navigation",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "Beratung anfragen"
+        }
+      }
+    },
+    "mono-sm": {
+      "$value": {
+        "fontFamily": "{font.family.mono}",
+        "fontSize": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "fontWeight": 400,
+        "letterSpacing": {
+          "value": 0.0,
+          "unit": "rem"
+        },
+        "lineHeight": 1.4
+      },
+      "$type": "typography",
+      "$description": "Normnummern und Messwerte",
+      "$extensions": {
+        "com.ams-audio": {
+          "sample": "DIN EN ISO 3382-1"
+        }
+      }
+    }
+  },
+  "space": {
+    "$type": "dimension",
+    "0-75": {
+      "$value": {
+        "value": 0.1875,
+        "unit": "rem"
+      }
+    },
+    "1": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 1.0,
+        "unit": "rem"
+      }
+    },
+    "5": {
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "7": {
+      "$value": {
+        "value": 1.75,
+        "unit": "rem"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 2.0,
+        "unit": "rem"
+      }
+    },
+    "10": {
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
+    },
+    "12": {
+      "$value": {
+        "value": 3.0,
+        "unit": "rem"
+      }
+    },
+    "14": {
+      "$value": {
+        "value": 3.5,
+        "unit": "rem"
+      }
+    },
+    "16": {
+      "$value": {
+        "value": 4.0,
+        "unit": "rem"
+      }
+    },
+    "20": {
+      "$value": {
+        "value": 5.0,
+        "unit": "rem"
+      }
+    },
+    "28": {
+      "$value": {
+        "value": 7.0,
+        "unit": "rem"
+      }
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "lg": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "xl": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "2xl": {
+      "$value": {
+        "value": 1.0,
+        "unit": "rem"
+      }
+    },
+    "3xl": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "full": {
+      "$value": {
+        "value": 9999,
+        "unit": "px"
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "container": {
+      "$value": {
+        "value": 80.0,
+        "unit": "rem"
+      },
+      "$description": "Maximale Inhaltsbreite"
+    },
+    "container-narrow": {
+      "$value": {
+        "value": 56.0,
+        "unit": "rem"
+      }
+    },
+    "measure": {
+      "$value": {
+        "value": 42.0,
+        "unit": "rem"
+      },
+      "$description": "Maximale Breite von Fließtext, etwa 70 Zeichen"
+    },
+    "target-min": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      },
+      "$description": "Mindestgröße für Klickziele (WCAG 2.5.8)"
+    },
+    "target-comfortable": {
+      "$value": {
+        "value": 2.75,
+        "unit": "rem"
+      },
+      "$description": "Empfohlene Größe für Touch-Hauptaktionen"
+    },
+    "focus-width": {
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      }
+    },
+    "focus-offset": {
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      }
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "2xl": {
+      "$value": {
+        "color": {
+          "colorSpace": "oklch",
+          "components": [
+            0.0,
+            0.0,
+            0
+          ],
+          "hex": "#000000",
+          "alpha": 0.25
+        },
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 25,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 50,
+          "unit": "px"
+        },
+        "spread": {
+          "value": -12,
+          "unit": "px"
+        }
+      },
+      "$description": "Einziger Schatten: gekippte Geräteplatte"
+    }
+  },
+  "motion": {
+    "duration": {
+      "$type": "duration",
+      "fast": {
+        "$value": {
+          "value": 300,
+          "unit": "ms"
+        },
+        "$description": "Buttons, Links"
+      },
+      "medium": {
+        "$value": {
+          "value": 500,
+          "unit": "ms"
+        },
+        "$description": "Icons, Ränder"
+      },
+      "slow": {
+        "$value": {
+          "value": 700,
+          "unit": "ms"
+        },
+        "$description": "Karten, Navigation"
+      }
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "standard": {
+        "$value": [
+          0.4,
+          0,
+          0.2,
+          1
+        ],
+        "$description": "Standardkurve"
+      },
+      "out": {
+        "$value": [
+          0,
+          0,
+          0.2,
+          1
+        ],
+        "$description": "Karten"
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { ErrorBoundary, SectionLoader } from './components/ui/ErrorBoundary';
 import { HomepageWrapper } from './components/SectionWrappers';
 
@@ -51,20 +51,12 @@ export {
 
 // Main App component with modular architecture
 function App() {
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    setIsReady(true);
-  }, []);
-
   return (
     <AppWrapper>
       <Suspense fallback={<SectionLoader />}>
-        {isReady && (
-          <HomepageWrapper>
-            <AMSAudioHomepage />
-          </HomepageWrapper>
-        )}
+        <HomepageWrapper>
+          <AMSAudioHomepage />
+        </HomepageWrapper>
       </Suspense>
     </AppWrapper>
   );
