@@ -9,6 +9,26 @@ Versionierung: [Semantic Versioning](https://semver.org/lang/de/)
 ## [Unreleased]
 
 ### Added
+- `docs/design-system/` — Design-System „AMS Audio“ (Tokens, Leitfaden, Komponenten-Vorschauen), auch als Artifact veröffentlicht
+- `docs/projekt/PROJEKTAUFTRAG.md` und `docs/projekt/PLAN.md` — Projektauftrag, Rollen, Engpässe, Phasen
+- `docs/adr/ADR-0006-freigabe-und-leitplanken.md` — Freigabemodell für eine Person mit KI-Projektleitung (Proposed)
+- `scripts/guardrails.sh` und Workflow `guardrails.yml` — erzwungene Leitplanken: Conventional Commits im PR, keine Google-Fonts-Einbindung, kein abgeschalteter Fokus, kein Autoplay, keine privaten Schlüssel
+- `.github/dependabot.yml` — wöchentliche Updates für npm und GitHub Actions mit konformen Commit-Präfixen
+- `eslint.config.js` — eslint 10 mit typescript-eslint
+- `public/favicon.svg`, `public/licenses/` (OFL-Texte der Schriften), `THIRD-PARTY-NOTICES.md`
+
+### Changed
+- `LICENSE` — von MIT auf „Alle Rechte vorbehalten“ umgestellt (vorläufig, unter Vorbehalt rechtlicher Prüfung)
+- Schriften werden selbst gehostet (@fontsource) statt von Google Fonts geladen
+- CI: Leserechte als Standard, Schreibrechte nur im Veröffentlichungs-Job, Actions auf Commit-SHAs gepinnt, Build und Veröffentlichung getrennt
+- Seite: Team ohne Steffen, 25 Jahre Erfahrung, Standort Nachrodt-Wiblingwerde, Absender „ein Angebot von MSH Audio“
+- `src/App.tsx` — unnötigen Render-Umweg entfernt
+
+### Security
+- Content-Security-Policy und Referrer-Policy im Production-Build
+- `npm audit`: 0 Schwachstellen (minimatch per Override ≥ 11.0.1)
+
+### Added (Sprint 1)
 - `docs/adr/` — ADR-System mit 5 initialen Architecture Decision Records (ADR-0001 bis ADR-0005)
 - `docs/sop/` — 5 Standard Operating Procedures (SOP-001 bis SOP-005)
 - `docs/content/schema.ts` — SSOT Content-Schema mit Typen und Validierung

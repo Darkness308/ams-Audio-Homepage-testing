@@ -4,7 +4,7 @@
 |------|------|
 | **Stand** | 2026-11-01 |
 | **Verantwortlich** | Claude (Projektleitung) |
-| **Freigabe** | Marc Schneider-Handrup (Auftraggeber) |
+| **Freigabe** | SiD Consulting (Auftraggeber); Fakten über MSH Audio: Marc Schneider-Handrup |
 | **Grundlage** | `PROJEKTAUFTRAG.md`, Dokumentenprüfung vom 2026-11-01, Web-Recherche Stylebook v2 vom 2026-11-01 (35 von 47 Aussagen vom Kritiker bestätigt, Korrekturen übernommen) |
 
 ## 1. Rollen und Mandate
@@ -13,26 +13,29 @@ Die bestehenden Dokumente (SOPs, ADRs, Agentenprofile) gehen von einem Entwickle
 
 | Rolle | Wer | Aufgaben |
 |-------|-----|----------|
-| **Auftraggeber** | Marc Schneider-Handrup | Entscheidet und gibt frei: Production, veröffentlichte Texte, Fakten über das Geschäft, Marke. Admin für GitHub, Domain/DNS und Server. Verantwortlicher nach DSGVO und Diensteanbieter nach § 5 DDG. Einziger Prüfer für Messwerte. |
+| **Auftraggeber** | SiD Consulting (GitHub: Darkness308) | Entscheidet und gibt frei: Production, Marke, Merges. Eigentümer und Admin von Repo, Domain und Server. |
+| **Betreiber** | Marc Schneider-Handrup (MSH Audio) | Diensteanbieter nach § 5 DDG und Verantwortlicher nach DSGVO für die Website. Gibt Fakten über das eigene Geschäft frei. Einziger Prüfer für Messwerte. |
 | **Projektleitung** | Claude | Plant, delegiert an Agenten, entwirft, prüft, committet, dokumentiert. Fachlicher Sicherheitskontakt. Meldet Engpässe, bevor sie blockieren. |
 | **Agenten** | Claude-Unteragenten | Recherche mit Quellen, Angriff und Gegenprüfung, Umsetzung. Nur mit Leitplanken; ändern nichts ohne Projektleitung. |
+| **Reviewer** | GitHub Copilot, optional Codex | Automatische Code-Reviews auf jedem Pull Request; Codex als zweiter Prüfer bei Sicherheit und Recht. |
 | **Rechtsanwalt** (extern, bei Bedarf) | offen | Prüfung von Impressum, Datenschutzerklärung, AGB, Werbeaussagen (UWG), Markenanmeldung. |
 | **Steuerberater** (extern, bei Bedarf) | offen | Kleinunternehmerregelung, E-Rechnung, spätere Rechtsform von AMS Audio. |
 
-**Freigabemodell** (wird ADR-0006): Jede Änderung läuft über einen Pull Request. Pflicht sind grüne CI und ein dokumentierter Claude-Review mit Gegenprüfung. Production braucht zusätzlich ein Ja des Auftraggebers über das GitHub-Environment `production`. Zwei menschliche Reviewer werden gestrichen, weil das bei einer Person jeden Merge blockiert.
+**Freigabemodell**: siehe `docs/adr/ADR-0006-freigabe-und-leitplanken.md` (Proposed). Jede Änderung läuft über einen Pull Request mit grüner CI und Leitplanken-Prüfung. Production braucht ein Ja von SiD über das GitHub-Environment `production`.
 
 ## 2. Engpässe, nach Dringlichkeit
 
 | # | Engpass | Warum er blockiert | Was es braucht | Wer |
 |---|---------|--------------------|----------------|-----|
-| E1 | **Zugänge und Eigentum** | Repo und Lizenz laufen auf das GitHub-Konto „Darkness308“. Ohne Admin-Zugang zu GitHub, Registrar/DNS und Server kann nichts davon scharfgeschaltet oder umgezogen werden. | Klären, wem Konto, Repo und Domain gehören; 2FA und Notfallzugang | Auftraggeber |
-| E2 | **Pflichtseiten fehlen auf der öffentlichen Seite** | Impressum und Datenschutz sind nur Text ohne Link. Die Seite nennt „AMS Audio Group“ (gibt es nicht) und „Ruhrgebiet“ statt Nachrodt-Wiblingwerde. | Pflichtangaben vom Auftraggeber; Entwurf durch Claude; externe Prüfung empfohlen | Auftraggeber, Claude, extern |
+| E1 | **Zugänge** | Geklärt: SiD besitzt Repo, Domain und Server. Offen sind die Admin-Klicks aus ADR-0006 (Branch-Schutz, Freigabe für Production) und 2FA/Notfallzugang. | Einrichtung laut ADR-0006 | SiD |
+| E2 | **Pflichtseiten fehlen** | Die Domain ist nicht live. Der Workflow `deploy.yml` veröffentlicht aber bei jedem Push auf `main` auf GitHub Pages; ob die Seite dort öffentlich erreichbar ist, muss in den Pages-Einstellungen geprüft werden. „AMS Audio Group“ und „Ruhrgebiet“ sind korrigiert. | Pages-Einstellung prüfen; Impressum und Datenschutz vor jedem Livegang | SiD, Claude |
 | E3 | **Kein Freigabemodell für eine Person** | So wie in SOP-002 beschrieben, würde Branch-Schutz jeden Merge blockieren. Ohne ihn bleiben die Regeln Papier. | ADR-0006 (siehe oben), danach Einstellungen in GitHub | Claude, dann Auftraggeber |
 | E4 | **Hosting-Entscheidung offen** | ADR-0005 und alle Workflows setzen auf GitHub Pages, der Auftrag auf den eigenen Ubuntu-Server. Sicherheits-Header und das RAG-Backend gehen nur mit eigenem Server. | ADR-0007; klären, was heute unter ams-audio.com läuft | Claude, Auftraggeber |
-| E5 | **Unbelegte Aussagen live** | „15+ Jahre“ (Seite) gegenüber „über 25 Jahre“ (Auftrag), „500+ Projekte“, „98 % Erfolgsquote“, „erste iPad-App“, „Ton-Ingenieur“ (Titel in NRW geschützt), Personen ohne Einwilligung. Werbeaussagen müssen belegbar sein (§ 5 UWG). | Bestätigung oder Streichung jeder Aussage | Auftraggeber |
-| E6 | **Gehärtete CI nicht auf `main`** | Production läuft noch mit den alten Workflows (breite Rechte, ungepinnte Actions). Die Verbesserungen liegen nur auf dem Arbeitsbranch. | Pull Request nach `main` | Freigabe Auftraggeber |
-| E7 | **Lizenz passt nicht** | MIT erlaubt jedem, Texte, Design und Code zu kopieren und zu verkaufen. Rechteinhaber ist ein GitHub-Konto, nicht MSH Audio. | Wechsel auf „alle Rechte vorbehalten“ | Freigabe Auftraggeber |
-| E8 | **Mehrere Agenten arbeiten parallel** | Eine andere Claude-Sitzung und Copilot haben am 2026-10-31 auf `main` gemergt; der Arbeitsbranch hatte dadurch Konflikte. | Eine Projektleitung, alles über Pull Requests | Auftraggeber entscheidet |
+| E5 | **Unbelegte Aussagen** | Geklärt: 25 Jahre Erfahrung, Steffen entfernt, SiD stimmt der Nennung zu. Offen: „500+ Projekte“, „98 % Erfolgsquote“, „50+ Partner“, „erste iPad-App“, Berechtigung zum Titel „Ingenieur“ (Ingenieurgesetz NRW). Werbeaussagen müssen belegbar sein (§ 5 UWG). | Belege oder Streichung | Marc Schneider-Handrup |
+| E6 | **Gehärtete CI nicht auf `main`** | Production läuft noch mit den alten Workflows. Freigegeben: Pull Request nach `main`. | Merge nach grüner CI und Copilot-Review | SiD |
+| E7 | **Lizenz** | Unter Vorbehalt auf „Alle Rechte vorbehalten“ umgestellt. Offen: vertragliche Aufteilung der Rechte zwischen SiD und MSH Audio. | Vereinbarung SiD und MSH Audio | SiD, Marc Schneider-Handrup |
+| E8 | **Mehrere Agenten** | Entschieden: Copilot übernimmt Reviews, Codex optional. Umsetzung über ADR-0006 (eine Projektleitung, alles über Pull Requests). | Branch-Schutz aktivieren | SiD |
+| E9 | **Auftragsverarbeitung** | MSH Audio ist Betreiber, der Server gehört SiD. Verarbeitet SiD dabei personenbezogene Daten (Server-Logs, Kontaktformular), braucht es einen Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). | Vertrag vor dem Umzug auf den Server | SiD, Marc Schneider-Handrup, extern optional |
 
 ## 3. Phasen
 
@@ -61,13 +64,9 @@ Entscheidungen der Projektleitung auf Basis der Recherche:
 - **Schriften im Artifact**: Inter wird als Datei hochgeladen statt von Google Fonts geladen.
 - **Logo**: fehlt. Vor einem Logo braucht es eine Markenrecherche (DPMA, EUIPO), weil „AMS“ im Audiobereich bereits genutzt wird (AMS Neve, ams-OSRAM). Für AcoustiScan gibt es eine ähnliche App („amscan“).
 
-## 5. Offene Fragen an den Auftraggeber
+## 5. Offene Fragen
 
-1. Heißt die Straße „Am Berkenstück 1“ oder „Berkenstück 1“?
-2. Wem gehören das GitHub-Konto „Darkness308“, die Domain ams-audio.com und der Server? Wer hat Admin-Zugang?
-3. Was läuft heute unter ams-audio.com: GitHub Pages oder der Windows-11-Rechner?
-4. Welche Zahlen auf der Seite sind belegbar (Jahre Erfahrung, Projekte, Erfolgsquote, Partner)? Unbelegte werden entfernt.
-5. Sollen „Steffen“ und „SiD Consulting“ auf der Seite bleiben? Dafür braucht es ihre Einwilligung.
-6. Darf Marc den Titel „Ingenieur“ führen (Ingenieurgesetz NRW)?
-7. Freigabe für einen Pull Request nach `main` und für den Lizenzwechsel?
-8. Sollen Copilot und andere Claude-Sitzungen weiter direkt am Repo arbeiten?
+1. Darf Marc Schneider-Handrup den Titel „Ingenieur“ führen (Abschluss oder Anerkennung nach Ingenieurgesetz NRW)? Bis zur Klärung erscheint der Titel nicht auf der neuen Seite.
+2. Welche Belege gibt es für „500+ Projekte“, „98 % Erfolgsquote“ und „50+ Partner“? Unbelegte Zahlen kommen nicht auf die neue Seite.
+3. Ist GitHub Pages für das Repo aktiv, und ist die Seite unter darkness308.github.io öffentlich erreichbar?
+4. Gibt es ein LinkedIn-Profil von Marc Schneider-Handrup, das als Beleg verlinkt werden kann?

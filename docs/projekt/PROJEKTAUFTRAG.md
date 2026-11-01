@@ -3,11 +3,11 @@
 | Feld | Wert |
 |------|------|
 | **Stand** | 2026-11-01 |
-| **Auftraggeber** | Inhaber AMS Audio / MSH Audio |
+| **Auftraggeber** | SiD Consulting (GitHub: Darkness308), Eigentümer von Repo, Domain und Server |
 | **Projektleitung und Fachverantwortung** | Claude (Multi-Agent-Lead) |
 | **Status** | Entwurf, wird mit jedem Arbeitsschritt fortgeschrieben |
 
-Dieses Dokument hält fest, was der Auftraggeber am 2026-11-01 als Ziel und Rahmen genannt hat. Punkte mit „bestätigen“ sind noch nicht geprüft.
+Dieses Dokument hält fest, was der Auftraggeber am 2026-11-01 als Ziel und Rahmen genannt hat.
 
 ## Ziel
 
@@ -16,8 +16,9 @@ Eine moderne Website für AMS Audio, die 2026 in allen relevanten Geschäftsbere
 ## Unternehmen und Marken
 
 - **AMS Audio**: Startup, wird als Marke nach vorne gestellt.
-- **MSH Audio**: Einzelunternehmen von Marc Schneider-Handrup, Am Berkenstück 1, 58769 Nachrodt-Wiblingwerde (beides vom Auftraggeber am 2026-11-01 bestätigt). Vorerst Betreiber der Website, Rechnungssteller und Zahlungsempfänger. Bleibt Motor und Kern; Idee: MSH Audio als Label oder Qualitätssicherung.
-- **Netzwerk**: über 25 Jahre aufgebautes globales Netzwerk von Marc Schneider-Handrup.
+- **MSH Audio**: Einzelunternehmen von Marc Schneider-Handrup, Berkenstück 1, 58769 Nachrodt-Wiblingwerde (vom Auftraggeber am 2026-11-01 bestätigt). Vorerst Betreiber der Website, Rechnungssteller und Zahlungsempfänger. Bleibt Motor und Kern; Idee: MSH Audio als Label oder Qualitätssicherung.
+- **Erfahrung**: Marc Schneider-Handrup hat 25 Jahre Erfahrung und ein über diese Zeit aufgebautes globales Netzwerk (Quelle: Bestätigung des Auftraggebers vom 2026-11-01; ein LinkedIn-Profil war über die öffentliche Websuche nicht auffindbar).
+- **SiD Consulting**: strategischer Berater, wird auf der Website mit Zustimmung genannt.
 - **AcoustiScan**: iPad-App in Entwicklung.
 
 ## Vorgehen (Reihenfolge laut Auftraggeber)
@@ -30,6 +31,16 @@ Eine moderne Website für AMS Audio, die 2026 in allen relevanten Geschäftsbere
 6. **Vektorspeicher** mit RAG und semantischer Suche.
 7. **Eigenes ERP und CRM** als Meilensteine in der Roadmap, verknüpft mit Reifegradmatrix und Scorecard.
 8. **Cloud** zum Skalieren erst, wenn die AcoustiScan-App fertig ist.
+
+## Werkzeuge
+
+- Claude: Desktop (Chat und Code), CLI, Remote auf Android, Claude in Chrome, claude.ai, GitHub-Integration. Das Agent-SDK-Guthaben des Ultra-Plans soll später auf dem Server genutzt werden.
+- GitHub Copilot (Abo): automatische Code-Reviews.
+- Codex (Business-Plan): optional als zweiter Prüfer.
+
+## Stand der Website
+
+ams-audio.com ist im Aufbau und nicht erreichbar.
 
 ## Arbeitsregeln
 
