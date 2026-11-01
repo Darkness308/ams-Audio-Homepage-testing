@@ -16,7 +16,7 @@ Eine moderne Website für AMS Audio, die 2026 in allen relevanten Geschäftsbere
 ## Unternehmen und Marken
 
 - **AMS Audio**: Startup, wird als Marke nach vorne gestellt.
-- **MSH Audio**: Einzelunternehmen von Marc Schneider-Handrup (Schreibweise bestätigen), Am Berkenstück 1, Nachrodt-Wiblingwerde (Postleitzahl bestätigen). Vorerst Betreiber der Website, Rechnungssteller und Zahlungsempfänger. Bleibt Motor und Kern; Idee: MSH Audio als Label oder Qualitätssicherung.
+- **MSH Audio**: Einzelunternehmen von Marc Schneider-Handrup, Am Berkenstück 1, 58769 Nachrodt-Wiblingwerde (beides vom Auftraggeber am 2026-11-01 bestätigt). Vorerst Betreiber der Website, Rechnungssteller und Zahlungsempfänger. Bleibt Motor und Kern; Idee: MSH Audio als Label oder Qualitätssicherung.
 - **Netzwerk**: über 25 Jahre aufgebautes globales Netzwerk von Marc Schneider-Handrup.
 - **AcoustiScan**: iPad-App in Entwicklung.
 
@@ -40,7 +40,6 @@ Eine moderne Website für AMS Audio, die 2026 in allen relevanten Geschäftsbere
 
 ## Offene Punkte
 
-- Schreibweise des Namens und Postleitzahl für Impressum bestätigen.
 - `docs/roadmap/ROADMAP.md` (Version 1.0.0) richtet sich noch auf Drohnenlogistik aus und muss an diesen Auftrag angepasst werden.
 - Reifegradmatrix und Scorecard definieren.
 - Markenarchitektur AMS Audio / MSH Audio / AcoustiScan entscheiden.
