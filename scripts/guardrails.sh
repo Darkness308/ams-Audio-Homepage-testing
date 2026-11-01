@@ -33,6 +33,16 @@ check "Kein autoplay bei Audio oder Video" \
 check "Keine privaten Schlüssel im Repo" \
   '-----BEGIN ([A-Z]+ )?PRIVATE KEY-----' --exclude=guardrails.sh .
 
+# 5. Erzeugte Token-Dateien entsprechen der Quelle tokens/ams.tokens.json.
+if node scripts/build-tokens.mjs --check; then :; else fail=1; fi
+
+# 6. Alle Farbpaare erfüllen WCAG 2.2 (Text 4,5:1, Fließtext 7:1, Bedienelemente 3:1).
+if node scripts/check-contrast.mjs > /tmp/ams-contrast.log 2>&1; then
+  echo "✓ Kontrast aller Farbpaare (Details: npm run contrast)"
+else
+  cat /tmp/ams-contrast.log; fail=1
+fi
+
 if [ "$fail" -ne 0 ]; then
   echo
   echo "Leitplanken verletzt. Siehe docs/adr/ADR-0006-freigabe-und-leitplanken.md"
