@@ -2,12 +2,14 @@
 
 | Feld        | Wert                        |
 |-------------|-----------------------------|
-| **Status**  | Accepted                    |
+| **Status**  | Superseded                  |
 | **Datum**   | 2026-08-04                  |
 | **Autor**   | AMS Audio Engineering Team  |
 | **Ersetzt** | —                           |
 
 ---
+
+> Superseded by [ADR-0008](ADR-0008-framer-motion-14.md).
 
 ## Kontext
 
