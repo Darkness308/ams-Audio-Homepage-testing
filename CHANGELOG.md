@@ -10,7 +10,7 @@ Versionierung: [Semantic Versioning](https://semver.org/lang/de/)
 
 ### Added
 - Einfache Website (Phase 2): Startseite nur mit belegten Inhalten, `impressum/` und `datenschutz/` als statische Seiten ohne JavaScript; alle Angaben aus `src/content/site.json`
-- `scripts/check-golive.mjs` (`npm run golive`) — sperrt den Go-Live bei offenen Nachweisen, fehlenden Pflichtangaben, fehlenden Links zu den Rechtsseiten oder unbelegten Werbeaussagen; läuft in den Leitplanken und vor jedem Production-Deploy
+- `scripts/check-golive.mjs` (`npm run golive`) — sperrt den Go-Live bei offenen Nachweisen, fehlenden Pflichtangaben, fehlenden Links zu den Rechtsseiten oder unbelegten Werbeaussagen; läuft als eigener CI-Check „Go-Live-Freigabe“ und vor jedem Production-Deploy
 - `docs/adr/ADR-0009-hosting.md` — GitHub Pages als Übergang, eigener Server danach, Go-Live-Checkliste für die DNS-Umstellung
 - `docs/design-system/` — Design-System „AMS Audio“ (Tokens, Leitfaden, Komponenten-Vorschauen), auch als Artifact veröffentlicht
 - `docs/projekt/PROJEKTAUFTRAG.md` und `docs/projekt/PLAN.md` — Projektauftrag, Rollen, Engpässe, Phasen
@@ -28,6 +28,11 @@ Versionierung: [Semantic Versioning](https://semver.org/lang/de/)
 - CI: Leserechte als Standard, Schreibrechte nur im Veröffentlichungs-Job, Actions auf Commit-SHAs gepinnt, Build und Veröffentlichung getrennt
 - Seite: Team ohne Steffen, 25 Jahre Erfahrung, Standort Nachrodt-Wiblingwerde, Absender „ein Angebot von MSH Audio“
 - `src/App.tsx` — unnötigen Render-Umweg entfernt
+
+### Fixed
+- Build auf `main` nach dem Update auf Tailwind 4 (Dependabot #35): Tailwind und `tailwind.config.js` entfernt, weil die Website es nicht mehr nutzt; PostCSS nur noch mit autoprefixer
+- Go-Live-Prüfung als eigener CI-Check „Go-Live-Freigabe“ statt Teil der Leitplanken, damit eine offene Freigabe nicht jeden Pull Request rot färbt; der Production-Deploy bleibt gesperrt
+- Go-Live-Prüfung kontrolliert die Prüfziffer der USt-IdNr. (ISO 7064 MOD 11,10)
 
 ### Security
 - Content-Security-Policy und Referrer-Policy im Production-Build
