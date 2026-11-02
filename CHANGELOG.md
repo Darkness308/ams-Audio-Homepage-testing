@@ -29,6 +29,11 @@ Versionierung: [Semantic Versioning](https://semver.org/lang/de/)
 - Seite: Team ohne Steffen, 25 Jahre Erfahrung, Standort Nachrodt-Wiblingwerde, Absender „ein Angebot von MSH Audio“
 - `src/App.tsx` — unnötigen Render-Umweg entfernt
 
+### Fixed
+- Build auf `main` nach dem Update auf Tailwind 4 (Dependabot #35): Tailwind und `tailwind.config.js` entfernt, weil die Website es nicht mehr nutzt; PostCSS nur noch mit autoprefixer
+- Go-Live-Prüfung als eigener CI-Check „Go-Live-Freigabe“ statt Teil der Leitplanken, damit eine offene Freigabe nicht jeden Pull Request rot färbt; der Production-Deploy bleibt gesperrt
+- Go-Live-Prüfung kontrolliert die Prüfziffer der USt-IdNr. (ISO 7064 MOD 11,10)
+
 ### Security
 - Content-Security-Policy und Referrer-Policy im Production-Build
 - `npm audit`: 0 Schwachstellen (minimatch per Override ≥ 11.0.1)

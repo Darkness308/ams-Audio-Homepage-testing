@@ -3,7 +3,7 @@
 //   2. alle Pflichtangaben für das Impressum (§ 5 DDG) gefüllt sind,
 //   3. Impressum und Datenschutz existieren und von jeder Seite verlinkt sind,
 //   4. keine unbelegten Werbeaussagen (§ 5 UWG) auf der Seite stehen.
-// Aufruf: npm run golive   (läuft auch in npm run guardrails und vor jedem Production-Deploy)
+// Aufruf: npm run golive   (eigener CI-Job „Go-Live-Freigabe“ und Pflichtschritt vor jedem Production-Deploy)
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
