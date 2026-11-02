@@ -3,7 +3,7 @@
 //   2. alle Pflichtangaben für das Impressum (§ 5 DDG) gefüllt sind,
 //   3. Impressum und Datenschutz existieren und von jeder Seite verlinkt sind,
 //   4. keine unbelegten Werbeaussagen (§ 5 UWG) auf der Seite stehen.
-// Aufruf: npm run golive   (läuft auch in npm run guardrails und vor jedem Production-Deploy)
+// Aufruf: npm run golive   (eigener CI-Job „Go-Live-Freigabe“ und Pflichtschritt vor jedem Production-Deploy)
 import { readFileSync, existsSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 
@@ -55,7 +55,18 @@ for (const b of blaetter) {
 for (const feld of ['name', 'geschaeftsbezeichnung', 'strasse', 'plz', 'ort', 'telefon', 'telefonLink', 'email', 'ustId']) {
   if (!String(site.anbieter?.[feld] ?? '').trim()) fehler.push(`Pflichtangabe fehlt: anbieter.${feld}`)
 }
-if (site.anbieter?.ustId && !/^DE\d{9}$/.test(site.anbieter.ustId)) fehler.push('anbieter.ustId hat nicht das Format DE + 9 Ziffern')
+// Deutsche USt-IdNr.: DE + 9 Ziffern, letzte Ziffer ist die Prüfziffer nach ISO 7064 MOD 11,10
+const ustIdGueltig = (id) => {
+  if (!/^DE\d{9}$/.test(id)) return false
+  let produkt = 10
+  for (const ziffer of id.slice(2, 10)) {
+    let summe = (Number(ziffer) + produkt) % 10
+    if (summe === 0) summe = 10
+    produkt = (2 * summe) % 11
+  }
+  return (11 - produkt) % 10 === Number(id[10])
+}
+if (site.anbieter?.ustId && !ustIdGueltig(site.anbieter.ustId)) fehler.push('anbieter.ustId: Format (DE + 9 Ziffern) oder Prüfziffer (ISO 7064 MOD 11,10) stimmt nicht')
 
 // 3. Rechtsseiten und Verlinkung
 const seiten = {

@@ -43,8 +43,8 @@ else
   cat /tmp/ams-contrast.log; fail=1
 fi
 
-# 7. Go-Live: Nachweise belegt, Impressum vollständig, Rechtsseiten verlinkt, keine unbelegten Werbeaussagen (ADR-0009).
-if node scripts/check-golive.mjs; then :; else fail=1; fi
+# Die Go-Live-Prüfung (npm run golive) läuft als eigener CI-Job und vor jedem Production-Deploy,
+# damit eine offene Freigabe nicht jeden Pull Request rot färbt (ADR-0009).
 
 if [ "$fail" -ne 0 ]; then
   echo
