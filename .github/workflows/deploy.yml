@@ -62,6 +62,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Go-Live-Prüfung (Nachweise, Impressum, Werbeaussagen — ADR-0009)
+        run: npm run golive
+
       - name: Gate 5 — Build with Vite (Production)
         run: npm run build
         env:

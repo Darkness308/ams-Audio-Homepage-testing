@@ -1,0 +1,61 @@
+{
+  "$kommentar": "Einzige Quelle für alle Angaben auf der Website (Startseite, Impressum, Datenschutz). HTML-Seiten lesen die Werte über {{schluessel}} beim Build ein (vite.config.ts), die Startseite importiert diese Datei. Jede Aussage über Personen und Leistungen braucht einen Eintrag unter nachweise; npm run golive bricht ab, solange ein Nachweis offen ist.",
+  "stand": "2. November 2026",
+  "marke": "AMS Audio",
+  "anbieter": {
+    "name": "Marc Schneider-Handrup",
+    "geschaeftsbezeichnung": "MSH Audio",
+    "strasse": "Berkenstück 1",
+    "plz": "58769",
+    "ort": "Nachrodt-Wiblingwerde",
+    "region": "NRW",
+    "telefon": "+49 172 2799667",
+    "telefonLink": "+491722799667",
+    "email": "marc.schneider@ams-audio.com",
+    "emailMsh": "msh@msh-audio.com",
+    "ustIdBezeichnung": "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG",
+    "ustId": "DE190743093"
+  },
+  "person": {
+    "beruf": "Ton-Ingenieur",
+    "erfahrungJahre": "25"
+  },
+  "berater": {
+    "name": "SiD Consulting",
+    "rolle": "Strategische Beratung"
+  },
+  "leistungen": [
+    {
+      "id": "veranstaltungston",
+      "titel": "Veranstaltungston",
+      "text": "Live-Ton, FOH und Beschallung für Veranstaltungen."
+    },
+    {
+      "id": "raumakustik",
+      "titel": "Raumakustik",
+      "text": "Messung der Nachhallzeit und Beratung zur Raumakustik."
+    },
+    {
+      "id": "bau-industrieakustik",
+      "titel": "Bau- und Industrieakustik",
+      "text": "Beratung zu Schallschutz in Gebäuden und zu Lärm am Arbeitsplatz."
+    },
+    {
+      "id": "laermprognosen",
+      "titel": "Lärmprognosen",
+      "text": "Prognosen nach TA Lärm, auch für Drohnen."
+    },
+    {
+      "id": "sprecher",
+      "titel": "Sprecher",
+      "text": "Sprecher für Hörbücher und Reiseguides."
+    }
+  ],
+  "nachweise": [
+    { "aussage": "Name, Anschrift, Telefon, E-Mail, USt-IdNr. im Impressum", "status": "belegt", "quelle": "Angabe SiD im Projektchat, 2026-11-02; Prüfziffer der USt-IdNr. rechnerisch geprüft" },
+    { "aussage": "25 Jahre Erfahrung", "status": "belegt", "quelle": "Bestätigung SiD, 2026-11-01" },
+    { "aussage": "Leistungen Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen (TA Lärm, Drohnen), Sprecher", "status": "belegt", "quelle": "Auswahl SiD im Projektchat, 2026-11-02" },
+    { "aussage": "SiD Consulting als strategische Beratung genannt", "status": "belegt", "quelle": "Zustimmung SiD, 2026-11-01" },
+    { "aussage": "Berufsbezeichnung „Ton-Ingenieur“", "status": "offen", "quelle": "Laut SiD Abschluss „Ton-Ingenieur (FH)“; Urkunde wird beschafft. Genaue Schreibweise nach Urkunde übernehmen (Ingenieurgesetz NRW)." }
+  ]
+}

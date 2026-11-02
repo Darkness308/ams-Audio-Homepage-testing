@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-          <meta charset="UTF-8" />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="referrer" content="strict-origin-when-cross-origin" />
-          <title>AMS Audio - Acoustics as a Service | Urbane Drohnenlogistik</title>
-        <meta name="description" content="AMS Audio bietet Acoustics as a Service für urbane Drohnenlogistik. Lärmcompliance, Regulatory Navigation und Community Integration für das Ruhrgebiet 2030." />
-        <meta name="keywords" content="AMS Audio, Acoustics as a Service, Drohnen, Lärmcompliance, U-Space, Ruhrgebiet 2030, Morpheus Logistik" />
-    </head>
+<html lang="de" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/seiten.css" />
+    <title>{{marke}} – Ton, Akustik und Sprache | {{anbieter.geschaeftsbezeichnung}}, {{anbieter.ort}}</title>
+    <meta name="description" content="{{marke}} ist ein Angebot von {{anbieter.geschaeftsbezeichnung}} ({{anbieter.name}}, {{anbieter.ort}}): Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen und Sprecher." />
+  </head>
   <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
+    <div id="root"></div>
+    <noscript>
+      <main class="site-legal">
+        <div class="site-container site-legal__body">
+          <h1>{{marke}}</h1>
+          <p>Ein Angebot von {{anbieter.geschaeftsbezeichnung}}, {{anbieter.name}}.</p>
+          <p>Kontakt: <a href="mailto:{{anbieter.email}}">{{anbieter.email}}</a> · <a href="tel:{{anbieter.telefonLink}}">{{anbieter.telefon}}</a></p>
+          <p><a href="impressum/">Impressum</a> · <a href="datenschutz/">Datenschutz</a></p>
+        </div>
+      </main>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
