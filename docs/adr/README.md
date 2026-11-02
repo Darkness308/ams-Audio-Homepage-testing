@@ -16,11 +16,15 @@ Kein ADR wird gelöscht — veraltete Entscheidungen erhalten den Status `Deprec
 
 | Nr.      | Titel                                          | Status   | Datum      |
 |----------|------------------------------------------------|----------|------------|
-| ADR-0001 | Tech Stack — React / Vite / TypeScript         | Accepted | 2026-08-04 |
+| ADR-0001 | Tech Stack — React / Vite / TypeScript         | Superseded | 2026-08-04 |
 | ADR-0002 | Monolith → Modulare Sections-Architektur       | Accepted | 2026-08-04 |
 | ADR-0003 | SSOT — Alle Inhalte aus `/docs/content/`       | Accepted | 2026-08-04 |
 | ADR-0004 | ChromaDB-Pipeline — Dev-only, Fallback         | Accepted | 2026-08-04 |
 | ADR-0005 | Primäre Produktionsdomäne — www.ams-audio.com  | Accepted | 2026-08-04 |
+| ADR-0006 | Freigabemodell und erzwungene Leitplanken      | Proposed | 2026-11-01 |
+| ADR-0007 | Design-Tokens als einzige Quelle (Stylebook v2) | Proposed | 2026-11-01 |
+| ADR-0008 | Framer Motion auf Version 14 aktualisieren     | Accepted | 2026-11-01 |
+| ADR-0009 | Hosting — GitHub Pages als Übergang, danach eigener Server | Accepted | 2026-11-02 |
 
 ## Neue ADRs erstellen
 

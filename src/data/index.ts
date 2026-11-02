@@ -76,8 +76,8 @@ export const statistics = [
 
 // Contact info
 export const contactInfo = {
-  company: 'AMS Audio Group',
-  address: 'Ruhrgebiet, Deutschland',
+  company: 'AMS Audio – ein Angebot von MSH Audio',
+  address: 'Berkenstück 1, 58769 Nachrodt-Wiblingwerde',
   email: 'info@ams-audio.com',
   phone: 'Auf Anfrage',
   tagline: 'Acoustics as a Service'

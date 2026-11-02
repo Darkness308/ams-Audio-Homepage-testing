@@ -1,0 +1,67 @@
+{
+  "$kommentar": "Einzige Quelle für alle Angaben auf der Website (Startseite, Impressum, Datenschutz). HTML-Seiten und die Startseite setzen die Werte über {{schluessel}} ein (src/content/fill.ts). Jedes Feld muss über nachweise[].felder von einem Nachweis abgedeckt sein; npm run golive bricht ab, wenn ein Feld nicht abgedeckt oder ein Nachweis offen ist.",
+  "stand": "2. November 2026",
+  "marke": "AMS Audio",
+  "anbieter": {
+    "name": "Marc Schneider-Handrup",
+    "geschaeftsbezeichnung": "MSH Audio",
+    "strasse": "Berkenstück 1",
+    "plz": "58769",
+    "ort": "Nachrodt-Wiblingwerde",
+    "region": "NRW",
+    "telefon": "+49 172 2799667",
+    "telefonLink": "+491722799667",
+    "email": "marc.schneider@ams-audio.com",
+    "emailMsh": "msh@msh-audio.com",
+    "ustIdBezeichnung": "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG",
+    "ustId": "DE190743093"
+  },
+  "person": {
+    "beruf": "Ton-Ingenieur",
+    "erfahrungJahre": "25"
+  },
+  "berater": {
+    "name": "SiD Consulting",
+    "rolle": "Strategische Beratung"
+  },
+  "leistungen": [
+    {
+      "id": "veranstaltungston",
+      "titel": "Veranstaltungston",
+      "text": "Live-Ton, FOH und Beschallung für Veranstaltungen."
+    },
+    {
+      "id": "raumakustik",
+      "titel": "Raumakustik",
+      "text": "Messung der Nachhallzeit und Beratung zur Raumakustik."
+    },
+    {
+      "id": "bau-industrieakustik",
+      "titel": "Bau- und Industrieakustik",
+      "text": "Beratung zu Schallschutz in Gebäuden und zu Lärm am Arbeitsplatz."
+    },
+    {
+      "id": "laermprognosen",
+      "titel": "Lärmprognosen",
+      "text": "Prognosen nach TA Lärm, auch für Drohnen."
+    },
+    {
+      "id": "sprecher",
+      "titel": "Sprecher",
+      "text": "Sprecher für Hörbücher und Reiseguides."
+    }
+  ],
+  "texte": {
+    "einleitung": "Ton, Akustik und Sprache von {{anbieter.name}}, {{person.beruf}} mit {{person.erfahrungJahre}} Jahren Erfahrung.",
+    "rolleInhaber": "{{person.beruf}} · Inhaber von {{anbieter.geschaeftsbezeichnung}}",
+    "beschreibung": "{{marke}} ist ein Angebot von {{anbieter.geschaeftsbezeichnung}} ({{anbieter.name}}, {{anbieter.ort}}): Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen und Sprecher."
+  },
+  "nachweise": [
+    { "aussage": "Marke AMS Audio als Angebot von MSH Audio, Inhaber Marc Schneider-Handrup", "status": "belegt", "quelle": "Projektauftrag SiD, 2026-11-01", "felder": ["marke", "texte.rolleInhaber", "texte.einleitung"] },
+    { "aussage": "Name, Anschrift, Telefon, E-Mail, USt-IdNr. im Impressum", "status": "belegt", "quelle": "Angabe SiD im Projektchat, 2026-11-02; Prüfziffer der USt-IdNr. rechnerisch geprüft", "felder": ["anbieter"] },
+    { "aussage": "25 Jahre Erfahrung", "status": "belegt", "quelle": "Bestätigung SiD, 2026-11-01", "felder": ["person.erfahrungJahre"] },
+    { "aussage": "Leistungen Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen (TA Lärm, Drohnen), Sprecher", "status": "belegt", "quelle": "Auswahl SiD im Projektchat, 2026-11-02", "felder": ["leistungen", "texte.beschreibung"] },
+    { "aussage": "SiD Consulting als strategische Beratung genannt", "status": "belegt", "quelle": "Zustimmung SiD, 2026-11-01", "felder": ["berater"] },
+    { "aussage": "Berufsbezeichnung „Ton-Ingenieur“", "status": "offen", "quelle": "Laut SiD Abschluss „Ton-Ingenieur (FH)“; Urkunde wird beschafft. Genaue Schreibweise nach Urkunde übernehmen (Ingenieurgesetz NRW).", "felder": ["person.beruf"] }
+  ]
+}

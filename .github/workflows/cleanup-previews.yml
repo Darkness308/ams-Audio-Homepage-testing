@@ -1,7 +1,9 @@
 name: Cleanup Old PR Previews
 
+# pull_request_target runs the workflow file from the default branch, so a PR
+# cannot change it. It only checks out the trusted gh-pages branch.
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
   workflow_dispatch:
 
@@ -13,13 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: gh-pages
 
       - name: Remove PR preview directory
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
           if [ -d "pr-${PR_NUMBER}" ]; then
             rm -rf "pr-${PR_NUMBER}"
             git config user.name "github-actions[bot]"

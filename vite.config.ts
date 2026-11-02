@@ -1,9 +1,61 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import type { Plugin } from 'vite'
+import { readFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { fill } from './src/content/fill'
+
+const root = fileURLToPath(new URL('.', import.meta.url))
+
+// Content-Security-Policy for production builds only: the dev server injects
+// inline scripts (React Refresh) that this policy would block.
+const CSP = [
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
+    "font-src 'self' data:",
+    "img-src 'self' data:",
+    "connect-src 'self'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "object-src 'none'",
+].join('; ')
+
+const cspPlugin = (): Plugin => ({
+    name: 'ams-csp',
+    apply: 'build',
+    transformIndexHtml: {
+        order: 'pre',
+        handler: () => [
+            { tag: 'meta', attrs: { 'http-equiv': 'Content-Security-Policy', content: CSP }, injectTo: 'head-prepend' },
+        ],
+    },
+})
+
+// Setzt {{schluessel.pfad}} in allen HTML-Seiten (Startseite, Impressum, Datenschutz) aus
+// src/content/site.json ein. Unbekannte Schlüssel brechen den Build ab, damit keine Lücke
+// unbemerkt online geht.
+const escapeHtml = (s: string) =>
+    s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+const sitePlugin = (): Plugin => ({
+    name: 'ams-site-content',
+    transformIndexHtml: {
+        order: 'pre',
+        handler: (html, ctx) => {
+            const site = JSON.parse(readFileSync(`${root}src/content/site.json`, 'utf8'))
+            try {
+                return fill(html, site, escapeHtml)
+            } catch (e) {
+                throw new Error(`${(e as Error).message} (${ctx.path})`, { cause: e })
+            }
+        },
+    },
+})
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-    plugins: [react()],
+    plugins: [cspPlugin(), sitePlugin(), react()],
     base: process.env.VITE_BASE_PATH || '/ams-Audio-Homepage-testing/',
     server: {
         proxy: {
@@ -18,5 +70,14 @@ export default defineConfig(({ mode }) => ({
           // Source maps disabled in production (security: no internal code exposure).
           // ADR-0005, Sprint 1 governance hardening.
           sourcemap: mode !== 'production',
+          // Mehrere Seiten: Impressum und Datenschutz sind statisches HTML ohne JavaScript,
+          // damit sie auch ohne funktionierendes Skript erreichbar sind (ADR-0009).
+          rolldownOptions: {
+              input: {
+                  main: `${root}index.html`,
+                  impressum: `${root}impressum/index.html`,
+                  datenschutz: `${root}datenschutz/index.html`,
+              },
+          },
     },
 }))
