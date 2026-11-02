@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/seiten.css" />
+    <title>Impressum | {{marke}}</title>
+    <meta name="description" content="Impressum von {{marke}}, einem Angebot von {{anbieter.geschaeftsbezeichnung}} ({{anbieter.name}})." />
+  </head>
+  <body>
+    <a class="site-skip" href="#inhalt">Zum Inhalt springen</a>
+    <header class="site-header">
+      <div class="site-container site-header__inner">
+        <a class="site-brand" href="../" aria-label="{{marke}}, zur Startseite">
+          <span class="site-brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+          </span>
+          <span class="site-brand__text">
+            <span class="site-brand__name">{{marke}}</span>
+            <span class="site-brand__sub">ein Angebot von {{anbieter.geschaeftsbezeichnung}}</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <a href="../">Startseite</a>
+          <a class="site-nav__optional" href="../#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inhalt" class="site-legal">
+      <div class="site-container site-legal__body">
+        <h1>Impressum</h1>
+
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <address>
+          {{anbieter.name}}<br />
+          {{anbieter.geschaeftsbezeichnung}}<br />
+          {{anbieter.strasse}}<br />
+          {{anbieter.plz}} {{anbieter.ort}}
+        </address>
+
+        <h2>Kontakt</h2>
+        <dl>
+          <dt>Telefon</dt>
+          <dd><a href="tel:{{anbieter.telefonLink}}">{{anbieter.telefon}}</a></dd>
+          <dt>E-Mail</dt>
+          <dd><a href="mailto:{{anbieter.email}}">{{anbieter.email}}</a></dd>
+          <dd><a href="mailto:{{anbieter.emailMsh}}">{{anbieter.emailMsh}}</a></dd>
+        </dl>
+
+        <h2>Umsatzsteuer</h2>
+        <p>{{anbieter.ustIdBezeichnung}}: {{anbieter.ustId}}</p>
+
+        <h2>Angebot</h2>
+        <p>{{marke}} ist ein Angebot von {{anbieter.geschaeftsbezeichnung}}, Inhaber {{anbieter.name}}.</p>
+
+        <p class="site-legal__stand">Stand: {{stand}}</p>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-container site-footer__inner">
+        <p class="site-footer__copy">{{marke}} – ein Angebot von {{anbieter.geschaeftsbezeichnung}}, {{anbieter.name}}</p>
+        <nav class="site-footer__links" aria-label="Rechtliches">
+          <a href="../impressum/" aria-current="page">Impressum</a>
+          <a href="../datenschutz/">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

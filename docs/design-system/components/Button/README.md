@@ -1,10 +1,12 @@
-The pill-shaped call to action: `primary` (light fill) for the one main action, `outline` for the secondary one beside it.
+Der pillenförmige Call-to-Action-Button: `primary` (gefüllt) für die eine Hauptaktion, `outline` für die zweite Aktion daneben.
 
-Hand-written from `src/components/AMSAudioHomepage.tsx` (inline `<button>` markup; there is no Button component on the live page).
+Von Hand nachgebaut aus `src/components/AMSAudioHomepage.tsx` (Inline-Markup mit `<button>`; auf der Live-Seite gibt es keine Button-Komponente).
 
-- **Primary:** `stone-100` fill, `neutral-900` text, `radius-full`, `space-4` × `space-10` padding, `button` type. Hover fills `white`. Use once per view.
-- **Outline:** 1px `stone-700` border, `stone-400` text. Hover lifts border to `stone-500` and text to `stone-200`.
-- **Small (nav):** 10px × `space-6` padding, 14px text, label only ("Anfrage").
-- The consumer provides the label (sentence case, a verb: "Beratung anfragen") and optionally a leading 16px lucide icon and a trailing ArrowRight that nudges `space-1` right on hover.
-- Pair primary + outline in a row with `space-5` gap; stack full-width below 640px.
-- Transitions 300ms. Do not use the sections library's orange `rounded-lg` button on the stone page.
+- **Primary:** Fläche `color-action-primary-bg`, Text `color-action-primary-fg` (16,4:1), `radius-full`, Innenabstand `space-4` × `space-10`, Schriftstil `button` (16px, Gewicht 500). Bei Hover wechselt die Fläche zu `color-action-primary-bg-hover`. Einmal pro Ansicht verwenden.
+- **Outline:** 1px Rand `color-action-secondary-border`, Text `color-action-secondary-fg`. Bei Hover wird der Rand zu `color-border-control` und der Text zu `color-action-secondary-fg-hover`.
+- **Klein (Navigation):** Innenabstand 10px × `space-6`, 14px Text, nur Label („Anfrage“).
+- Die Anwendung liefert das Label (Satzschreibung, ein Verb: „Beratung anfragen“) und optional ein führendes 16px-Lucide-Icon sowie einen nachgestellten ArrowRight, der bei Hover um `space-1` nach rechts rückt.
+- Primary und Outline nebeneinander mit `space-5` Abstand; unter 640px in voller Breite untereinander stapeln.
+- Übergänge 300ms. Den orangefarbenen `rounded-lg`-Button der Sections-Bibliothek nicht auf der Stone-Seite verwenden.
+- Bedienbarkeit: Mindesthöhe `size-target-min`; der Tastaturfokus zeigt einen Rahmen in `color-focus-ring` (`size-focus-width`, Abstand `size-focus-offset`). Unter `prefers-reduced-motion` rückt der Pfeil nicht.
+- Kontrast: Alle Textfarben erfüllen in beiden Themes mindestens WCAG AA (4,5:1).

@@ -2,7 +2,7 @@
 
 | Feld | Wert |
 |------|------|
-| **Stand** | 2026-11-01 |
+| **Stand** | 2026-11-02 |
 | **Verantwortlich** | Claude (Projektleitung) |
 | **Freigabe** | SiD Consulting (Auftraggeber); Fakten über MSH Audio: Marc Schneider-Handrup |
 | **Grundlage** | `PROJEKTAUFTRAG.md`, Dokumentenprüfung vom 2026-11-01, Web-Recherche Stylebook v2 vom 2026-11-01 (35 von 47 Aussagen vom Kritiker bestätigt, Korrekturen übernommen) |
@@ -28,24 +28,24 @@ Die bestehenden Dokumente (SOPs, ADRs, Agentenprofile) gehen von einem Entwickle
 | # | Engpass | Warum er blockiert | Was es braucht | Wer |
 |---|---------|--------------------|----------------|-----|
 | E1 | **Zugänge** | Geklärt: SiD besitzt Repo, Domain und Server. Offen sind die Admin-Klicks aus ADR-0006 (Branch-Schutz, Freigabe für Production) und 2FA/Notfallzugang. | Einrichtung laut ADR-0006 | SiD |
-| E2 | **Pflichtseiten fehlen** | Die Domain ist nicht live. Der Workflow `deploy.yml` veröffentlicht aber bei jedem Push auf `main` auf GitHub Pages; ob die Seite dort öffentlich erreichbar ist, muss in den Pages-Einstellungen geprüft werden. „AMS Audio Group“ und „Ruhrgebiet“ sind korrigiert. | Pages-Einstellung prüfen; Impressum und Datenschutz vor jedem Livegang | SiD, Claude |
+| E2 | **Pflichtseiten** | Umgesetzt: Impressum (§ 5 DDG) und Datenschutzerklärung als statische Seiten, Angaben aus `src/content/site.json`. Geprüft am 2026-11-02: GitHub Pages leitet auf `ams-audio.com` weiter, die Domain zeigt die Squarespace-Platzhalterseite; die Seite ist also noch nirgends öffentlich. | Anwaltliche Prüfung der Texte (empfohlen) | SiD, extern optional |
 | E3 | **Kein Freigabemodell für eine Person** | So wie in SOP-002 beschrieben, würde Branch-Schutz jeden Merge blockieren. Ohne ihn bleiben die Regeln Papier. | ADR-0006 (siehe oben), danach Einstellungen in GitHub | Claude, dann Auftraggeber |
-| E4 | **Hosting-Entscheidung offen** | ADR-0005 und alle Workflows setzen auf GitHub Pages, der Auftrag auf den eigenen Ubuntu-Server (gehört SiD, installiert, nicht eingerichtet). Die Domain ist noch nicht live. Sicherheits-Header und das RAG-Backend gehen nur mit eigenem Server. | ADR-0008 Hosting; SSH-Zugang zum Server | Claude, SiD |
-| E5 | **Unbelegte Aussagen** | Geklärt: 25 Jahre Erfahrung, Steffen entfernt, SiD stimmt der Nennung zu. Offen: „500+ Projekte“, „98 % Erfolgsquote“, „50+ Partner“, „erste iPad-App“, Berechtigung zum Titel „Ingenieur“ (Ingenieurgesetz NRW). Werbeaussagen müssen belegbar sein (§ 5 UWG). | Belege oder Streichung | Marc Schneider-Handrup |
+| E4 | **Hosting** | Entschieden (ADR-0009): GitHub Pages als Übergang, danach der eigene Ubuntu-Server, den SiD und Claude gemeinsam einrichten. Go-Live ist die DNS-Umstellung bei Squarespace nach der Checkliste in ADR-0009. | Server gemeinsam vorbereiten; SSH-Zugang | SiD, Claude |
+| E5 | **Unbelegte Aussagen** | Die neue Seite enthält nur belegte Inhalte (Nachweise in `src/content/site.json`). Gestrichen: Kennzahlen, „erste/revolutionäre iPad-App“, Normaussagen, „behördenfähig“, Morpheus. Offen: Urkunde für „Ton-Ingenieur“ (laut SiD „Ton-Ingenieur (FH)“, wird beschafft). Bis dahin sperrt `npm run golive`. | Urkunde | SiD, Marc Schneider-Handrup |
 | E6 | **Gehärtete CI nicht auf `main`** | Production läuft noch mit den alten Workflows. Freigegeben: Pull Request nach `main`. | Merge nach grüner CI und Copilot-Review | SiD |
 | E7 | **Lizenz** | Unter Vorbehalt auf „Alle Rechte vorbehalten“ umgestellt. Offen: vertragliche Aufteilung der Rechte zwischen SiD und MSH Audio. | Vereinbarung SiD und MSH Audio | SiD, Marc Schneider-Handrup |
 | E8 | **Mehrere Agenten** | Entschieden: Copilot übernimmt Reviews, Codex optional. Umsetzung über ADR-0006 (eine Projektleitung, alles über Pull Requests). | Branch-Schutz aktivieren | SiD |
 | E10 | **Repo ist öffentlich** | Das GitHub-Repo ist öffentlich (geprüft am 2026-11-01). Projektplan, Engpässe, rechtliche Einschätzungen und künftige Inhaltsbelege sind für jeden lesbar. Belege aus dem Drive (Referenzen, Vita) werden deshalb vorerst nicht im Repo abgelegt. | Entscheidung: Repo privat stellen (GitHub Pages braucht dann einen kostenpflichtigen Plan; entfällt mit dem eigenen Server) oder interne Dokumente in ein privates Repo verschieben | SiD |
-| E9 | **Auftragsverarbeitung** | MSH Audio ist Betreiber, der Server gehört SiD. Verarbeitet SiD dabei personenbezogene Daten (Server-Logs, Kontaktformular), braucht es einen Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). | Vertrag vor dem Umzug auf den Server | SiD, Marc Schneider-Handrup, extern optional |
+| E9 | **Auftragsverarbeitung** | MSH Audio ist Betreiber, Repo-Account und Server gehören SiD. Verarbeitet SiD dabei personenbezogene Daten (Server-Logs, Kontaktformular), braucht es einen Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Für GitHub Pages bietet GitHub persönlichen Accounts keinen solchen Vertrag an (ADR-0009). | Vertrag MSH–SiD vor dem Umzug auf den Server; Vertrag mit dem E-Mail-Anbieter prüfen | SiD, Marc Schneider-Handrup, extern optional |
 
 ## 3. Phasen
 
 | Phase | Inhalt | Voraussetzung |
 |-------|--------|---------------|
-| **0 Governance** | ADR-0006 Freigabemodell, ADR-0008 Hosting, Lizenz, Zugänge klären, Branch-Schutz, Roadmap v2 mit Reifegradmatrix und Scorecard | E1, E3 |
-| **1 Stylebook v2** | siehe Abschnitt 4 | läuft |
-| **2 Einfache Website** | Neuaufbau auf dem Stylebook, Tailwind v4, Impressum und Datenschutz, nur belegte Inhalte | E2, E5, Phase 1 |
-| **3 Server** | Ubuntu absichern, Webserver mit HTTPS und Sicherheits-Headern, Deploy über Git | E1, E4 |
+| **0 Governance** | ADR-0006 Freigabemodell, ADR-0009 Hosting (entschieden), Lizenz, Zugänge klären, Branch-Schutz, Roadmap v2 mit Reifegradmatrix und Scorecard | E1, E3 |
+| **1 Stylebook v2** | siehe Abschnitt 4 | fertig, PR #36 wartet auf den Merge |
+| **2 Einfache Website** | Neuaufbau auf den Stylebook-Komponenten, Impressum und Datenschutz, nur belegte Inhalte, Go-Live-Prüfung; Go-Live über GitHub Pages (ADR-0009) | läuft; Go-Live wartet auf die Urkunde (E5) |
+| **3 Server** | Gemeinsam mit SiD: Ubuntu absichern, Webserver mit HTTPS und Sicherheits-Headern, Deploy über Git | E1, E9 |
 | **4 Umzug** | DNS umstellen, Abnahme | Phase 2 und 3 |
 | **5 Daten** | SQLite und DuckDB | Phase 3 |
 | **6 Wissen** | Vektorspeicher, RAG, semantische Suche | Phase 5 |
@@ -67,7 +67,7 @@ Entscheidungen der Projektleitung auf Basis der Recherche:
 
 ## 5. Offene Fragen
 
-1. Darf Marc Schneider-Handrup den Titel „Ingenieur“ führen (Abschluss oder Anerkennung nach Ingenieurgesetz NRW)? Bis zur Klärung erscheint der Titel nicht auf der neuen Seite.
-2. Welche Belege gibt es für „500+ Projekte“, „98 % Erfolgsquote“ und „50+ Partner“? Unbelegte Zahlen kommen nicht auf die neue Seite.
-3. Ist GitHub Pages für das Repo aktiv, und ist die Seite unter darkness308.github.io öffentlich erreichbar?
-4. Gibt es ein LinkedIn-Profil von Marc Schneider-Handrup, das als Beleg verlinkt werden kann?
+1. Urkunde für „Ton-Ingenieur (FH)“: genaue Bezeichnung laut Urkunde. Bis dahin ist der Go-Live gesperrt.
+2. Soll zusätzlich `info@ams-audio.com` genannt werden, oder bleibt `marc.schneider@ams-audio.com` die Kontaktadresse?
+3. Gibt es ein LinkedIn-Profil von Marc Schneider-Handrup, das als Beleg verlinkt werden kann?
+4. Referenzen (ESC, IOC u. a.) erst mit Agentur-Formulierung und schriftlicher Zustimmung; bis dahin nicht auf der Seite.

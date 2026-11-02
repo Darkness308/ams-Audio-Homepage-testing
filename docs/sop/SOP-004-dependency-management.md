@@ -92,14 +92,14 @@ npm audit --audit-level=high
 
 Bei Findings mit CVSS ≥ 7.0 (High/Critical): **Build schlägt fehl.**
 
-## Aktuelle Dependencies (Stand 2026-08-04)
+## Aktuelle Dependencies (Stand 2026-11-01)
 
 ### Production
 | Package       | Version   | Zweck              | Lizenz |
 |---------------|-----------|--------------------|--------|
-| react         | ^18.3.1   | UI Framework       | MIT    |
-| react-dom     | ^18.3.1   | DOM Renderer       | MIT    |
-| framer-motion | ^11.15.0  | Animationen        | MIT    |
+| react         | ^19.3.1   | UI Framework       | MIT    |
+| react-dom     | ^19.3.1   | DOM Renderer       | MIT    |
+| framer-motion | ^14.7.1   | Animationen        | MIT    |
 | lucide-react  | ^0.468.0  | Icons              | ISC    |
 
 ### Dev

@@ -1,9 +1,10 @@
-A large extra-light figure with an uppercase label that counts up from 0 when it first scrolls into view.
+Eine große, extraleichte Zahl mit Label in Großbuchstaben, die beim ersten Hereinscrollen von 0 hochzählt.
 
-Hand-written from `StatCounter` in `src/components/AMSAudioHomepage.tsx`.
+Von Hand nachgebaut aus `StatCounter` in `src/components/AMSAudioHomepage.tsx`.
 
-- Props in the source: `value` (numeric string), `label`, optional `suffix` ("+", "%").
-- Value in `stat-number` (`stone-200`), label in `label-caps` (`stone-600`) `space-3` below.
-- Counting runs 3s at about 60 fps once the element is half visible (IntersectionObserver, threshold 0.5), and only once.
-- Use four in `.ams-stat-grid`: 2 columns with `space-12` gaps, 4 columns with `space-16` gaps from 768px. Show figures the business can substantiate.
-- `stone-600` labels are 2.6:1 on `neutral-950`, below WCAG AA; consider `stone-400`.
+- Props in der Quelle: `value` (Zahl als String), `label`, optional `suffix` („+“, „%“).
+- Wert im Stil `stat-number` (Gewicht 200, erst ab 48px zulässig) in `color-text`, Label im Stil `label-caps` (Gewicht 500) in `color-text-subtle`, `space-3` darunter.
+- Das Zählen läuft 3s mit etwa 60 fps, sobald das Element zur Hälfte sichtbar ist (IntersectionObserver, threshold 0.5), und nur einmal.
+- Vier Stück in `.ams-stat-grid` verwenden: 2 Spalten mit `space-12` Abständen, ab 768px 4 Spalten mit `space-16` Abständen.
+- Es werden nur belegte und freigegebene Zahlen eingesetzt. In der Vorschau ist nur „25 Jahre Erfahrung“ belegt (Bestätigung des Auftraggebers); die übrigen drei Felder sind Platzhalter („00“, „Beispielwert“) und kein wiederverwendbarer Inhalt.
+- Kontrast: Labels in `color-text-subtle` erreichen auf allen Flächen mindestens 4,99:1 (dunkel) bzw. 4,58:1 (hell) und erfüllen damit WCAG AA (4,5:1).
