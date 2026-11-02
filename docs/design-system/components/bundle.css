@@ -3,9 +3,25 @@
    Alle Farben, Abstände, Radien und Größen kommen aus den semantischen Tokens der tokens.css,
    die vor dieser Datei geladen wird (Themes über <html data-theme="dark|light">, dunkel ist Standard).
    Farb-Tokens heißen --color-*; Primitive (--color-stone-*, --color-neutral-* usw.) werden hier nicht verwendet.
-   Schriften kommen per @font-face aus fonts/.
+   Schriften: die @font-face-Regeln unten laden die selbst gehosteten Dateien aus ../fonts/
+   (gleicher Pfad im Repo und im Artifact), keine Anfrage an Dritte.
    Typo-Regeln v2: Fließtext, Einleitung und Listen mindestens Gewicht 400; Gewicht 300 erst ab 24px;
    Gewicht 200 erst ab 48px; keine Schrift unter 12px; Labels und Eyebrow in Gewicht 500. */
+
+@font-face {
+  font-family: "Inter Variable";
+  src: url("../fonts/InterVariable-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/JetBrainsMono-latin-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
   margin: 0;
@@ -127,9 +143,10 @@ body {
 .ams-badge--danger { background: var(--color-status-danger-bg); border-color: var(--color-status-danger-border); color: var(--color-status-danger); }
 .ams-badge--info { background: var(--color-status-info-bg); border-color: var(--color-status-info-border); color: var(--color-status-info); }
 
-/* Reduzierte Bewegung: Endlos-Animationen, Transforms und Bewegung bei Hover aus */
+/* Reduzierte Bewegung: Animationen, Übergänge, Transforms und Bewegung bei Hover aus */
 @media (prefers-reduced-motion: reduce) {
   .ams-wave__bar, .ams-gradient-text, .ams-eyebrow__dot { animation: none; }
+  [class*="ams-"], [class*="ams-"] *, [class*="ams-"] *::before { transition: none !important; }
   .ams-wave__bar { transform: none; opacity: .4; }
   .ams-btn:hover .ams-btn__arrow,
   .ams-service:hover .ams-service__well { transform: none; }
