@@ -24,6 +24,7 @@ Kein ADR wird gelöscht — veraltete Entscheidungen erhalten den Status `Deprec
 | ADR-0006 | Freigabemodell und erzwungene Leitplanken      | Proposed | 2026-11-01 |
 | ADR-0007 | Design-Tokens als einzige Quelle (Stylebook v2) | Proposed | 2026-11-01 |
 | ADR-0008 | Framer Motion auf Version 14 aktualisieren     | Accepted | 2026-11-01 |
+| ADR-0009 | Hosting — GitHub Pages als Übergang, danach eigener Server | Accepted | 2026-11-02 |
 
 ## Neue ADRs erstellen
 

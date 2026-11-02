@@ -1,65 +1,31 @@
-import React, { Suspense, lazy } from 'react';
-import { ErrorBoundary, SectionLoader } from './components/ui/ErrorBoundary';
-import { HomepageWrapper } from './components/SectionWrappers';
+import { ErrorBoundary } from './components/ui/ErrorBoundary'
+import Startseite from './site/Startseite'
+import site from './content/site.json'
 
-// Lazy load the main component for code splitting
-const AMSAudioHomepage = lazy(() => import('./components/AMSAudioHomepage'));
-
-// App wrapper with global error boundary
-function AppWrapper({ children }: { children: React.ReactNode }) {
+// Fällt die Startseite aus, bleiben Kontakt und die Rechtsseiten erreichbar.
+function Notfall() {
+  const base = import.meta.env.BASE_URL
   return (
-    <ErrorBoundary
-      fallback={
-        <div className="min-h-screen bg-neutral-950 flex items-center justify-center">
-          <div className="text-center p-8">
-            <div className="text-red-500 text-6xl mb-4">⚠</div>
-            <h1 className="text-2xl font-light text-stone-200 mb-4">
-              Anwendungsfehler
-            </h1>
-            <p className="text-stone-500 mb-6">
-              Die Anwendung konnte nicht geladen werden.
-            </p>
-            <button
-              onClick={() => window.location.reload()}
-              className="px-6 py-3 bg-stone-100 text-neutral-900 rounded-full hover:bg-white transition-colors"
-            >
-              Seite neu laden
-            </button>
-          </div>
-        </div>
-      }
-    >
-      {children}
+    <main className="site-legal">
+      <div className="site-container site-legal__body">
+        <h1>{site.marke}</h1>
+        <p>Die Seite konnte nicht vollständig geladen werden.</p>
+        <p>
+          Kontakt: <a href={`mailto:${site.anbieter.email}`}>{site.anbieter.email}</a> ·{' '}
+          <a href={`tel:${site.anbieter.telefonLink}`}>{site.anbieter.telefon}</a>
+        </p>
+        <p>
+          <a href={`${base}impressum/`}>Impressum</a> · <a href={`${base}datenschutz/`}>Datenschutz</a>
+        </p>
+      </div>
+    </main>
+  )
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary fallback={<Notfall />}>
+      <Startseite />
     </ErrorBoundary>
-  );
+  )
 }
-
-export {
-  SectionWrapper,
-  NavigationSection,
-  HeroSection,
-  BrandsSection,
-  StatsSection,
-  ServicesSection,
-  AcoustiScanSection,
-  Vision2030Section,
-  HolzbauSection,
-  TeamSection,
-  CTASection,
-  FooterSection,
-} from './components/SectionWrappers';
-
-// Main App component with modular architecture
-function App() {
-  return (
-    <AppWrapper>
-      <Suspense fallback={<SectionLoader />}>
-        <HomepageWrapper>
-          <AMSAudioHomepage />
-        </HomepageWrapper>
-      </Suspense>
-    </AppWrapper>
-  );
-}
-
-export default App;

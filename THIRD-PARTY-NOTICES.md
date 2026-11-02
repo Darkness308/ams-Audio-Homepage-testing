@@ -4,12 +4,9 @@ Diese Website liefert folgende Bestandteile Dritter aus. Es gelten die jeweilige
 
 | Bestandteil | Version | Lizenz | Lizenztext |
 |-------------|---------|--------|------------|
-| Inter (Schrift, über @fontsource/inter) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-inter.txt` |
-| Outfit (Schrift, über @fontsource/outfit) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-outfit.txt` |
-| DM Sans (Schrift, über @fontsource/dm-sans) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-dm-sans.txt` |
-| JetBrains Mono (Schrift, über @fontsource/jetbrains-mono) | 5.3.0 | SIL Open Font License 1.1 | `public/licenses/OFL-jetbrains-mono.txt` |
+| Inter Variable (Schrift, Datei aus `docs/design-system/fonts/`) | 4.001 | SIL Open Font License 1.1 | `public/licenses/OFL-inter.txt` |
+| JetBrains Mono (Schrift, Datei aus `docs/design-system/fonts/`) | 2.211 | SIL Open Font License 1.1 | `public/licenses/OFL-jetbrains-mono.txt` |
 | React, React DOM | 19.3.1 | MIT | `node_modules/react/LICENSE` |
-| Framer Motion | 14.7.1 | MIT | `node_modules/framer-motion/LICENSE.md` |
-| Lucide (Icons, über lucide-react) | 0.468.0 | ISC | `node_modules/lucide-react/LICENSE` |
+| Lucide (Icons, über lucide-react) | 1.64.0 | ISC | `node_modules/lucide-react/LICENSE` |
 
-Die OFL-Texte der Schriften werden unter `/licenses/` mit der Website ausgeliefert, weil die Schriftdateien Teil des Builds sind.
+Die Schriften kommen aus dem Stylebook (`docs/design-system/components/bundle.css`), damit Website und Stylebook dieselben Dateien nutzen. Die OFL-Texte werden unter `/licenses/` mit der Website ausgeliefert, weil die Schriftdateien Teil des Builds sind.
