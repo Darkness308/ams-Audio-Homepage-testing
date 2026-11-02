@@ -1,0 +1,7 @@
+/* Einstieg für alle Seiten (Startseite, Impressum, Datenschutz).
+   Reihenfolge: Tokens, dann die Komponenten aus dem Stylebook, dann das Seitenlayout.
+   Die Komponenten-Datei ist dieselbe wie im Stylebook-Artifact (eine Quelle, ADR-0007);
+   sie lädt auch die selbst gehosteten Schriften. */
+@import './tokens.css';
+@import '../../docs/design-system/components/bundle.css';
+@import './site.css';
