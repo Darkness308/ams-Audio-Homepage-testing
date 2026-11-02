@@ -85,6 +85,10 @@ for (const t of flat.values()) {
   else if (group === 'motion' && rest[0] === 'duration') scalar.push(`  --duration-${rest[1]}: ${v.value}${v.unit};`)
   else if (group === 'motion' && rest[0] === 'easing') scalar.push(`  --ease-${rest[1]}: cubic-bezier(${v.join(', ')});`)
 }
+// Primitive (themeunabhängig), z. B. --color-stone-800; nur für das Cover und Sonderfälle
+for (const t of flat.values()) {
+  if (t.path[0] === 'color' && t.path[1] === 'primitive') scalar.push(`  --color-${t.path.slice(2).join('-')}: ${cssColor(resolve(t.$value))};`)
+}
 const typeClasses = []
 for (const t of flat.values()) {
   if (t.path[0] !== 'typography') continue
