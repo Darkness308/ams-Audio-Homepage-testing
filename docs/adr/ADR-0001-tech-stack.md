@@ -13,7 +13,7 @@
 
 ## Kontext
 
-Das bestehende Repository verwendet React 18, Vite 8, TypeScript 5, Tailwind CSS 3 und Framer Motion.
+Das bestehende Repository verwendet React 19, Vite 8, TypeScript 5, Tailwind CSS 3 und Framer Motion.
 Die initiale Code-Review (2026-08-04) ergab, dass der Stack technisch aktuell ist, `npm audit` 0 Schwachstellen
 meldet und der Build sauber durchläuft. Ein Wechsel würde keinen Mehrwert liefern, aber erheblichen
 Migrationsaufwand erzeugen.
@@ -24,7 +24,7 @@ Der Tech Stack **bleibt unverändert**:
 
 | Technologie      | Version   | Begründung                                              |
 |------------------|-----------|---------------------------------------------------------|
-| React            | ^18.3.1   | Stable LTS, StrictMode aktiv, concurrent features ready |
+| React            | ^19.3.1   | Stable LTS, StrictMode aktiv, concurrent features ready |
 | Vite             | ^8.0.16   | Schnellste Build-Zeit, ESM-native, aktiv maintained     |
 | TypeScript       | ^5.6.3    | Vollständige Typsicherheit, IDE-Support                 |
 | Tailwind CSS     | ^3.4.15   | Utility-first, konsistent im Codebase                   |
