@@ -10,7 +10,7 @@ Versionierung: [Semantic Versioning](https://semver.org/lang/de/)
 
 ### Added
 - Einfache Website (Phase 2): Startseite nur mit belegten Inhalten, `impressum/` und `datenschutz/` als statische Seiten ohne JavaScript; alle Angaben aus `src/content/site.json`
-- `scripts/check-golive.mjs` (`npm run golive`) — sperrt den Go-Live bei offenen Nachweisen, fehlenden Pflichtangaben, fehlenden Links zu den Rechtsseiten oder unbelegten Werbeaussagen; läuft in den Leitplanken und vor jedem Production-Deploy
+- `scripts/check-golive.mjs` (`npm run golive`) — sperrt den Go-Live bei offenen Nachweisen, fehlenden Pflichtangaben, fehlenden Links zu den Rechtsseiten oder unbelegten Werbeaussagen; läuft als eigener CI-Check „Go-Live-Freigabe“ und vor jedem Production-Deploy
 - `docs/adr/ADR-0009-hosting.md` — GitHub Pages als Übergang, eigener Server danach, Go-Live-Checkliste für die DNS-Umstellung
 - `docs/design-system/` — Design-System „AMS Audio“ (Tokens, Leitfaden, Komponenten-Vorschauen), auch als Artifact veröffentlicht
 - `docs/projekt/PROJEKTAUFTRAG.md` und `docs/projekt/PLAN.md` — Projektauftrag, Rollen, Engpässe, Phasen

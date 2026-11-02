@@ -68,6 +68,10 @@ Reihenfolge einhalten. Die Werte stammen aus den GitHub Docs (Quellen unten).
 - **E-Mail:** Ein Fehler bei der DNS-Umstellung kann den E-Mail-Empfang unterbrechen. Gegenmittel: Checkliste, Screenshot vorher, Test-E-Mails danach.
 - **Berufsbezeichnung:** „Ton-Ingenieur“ ist nach dem Ingenieurgesetz NRW geschützt. Die Urkunde wird beschafft, bis dahin sperrt die Go-Live-Prüfung. Offen ist außerdem, ob die Bezeichnung zusätzliche Impressumsangaben nach § 5 Abs. 1 Nr. 5 DDG (reglementierte Berufe) auslöst; das gehört zur anwaltlichen Prüfung.
 
+## Nachtrag 2026-11-02 (PR #38)
+
+Abweichend von Entscheidung 5 läuft `npm run golive` nicht mehr in `npm run guardrails`. Die Prüfung ist jetzt ein eigener CI-Check „Go-Live-Freigabe“ in jedem Pull Request (`guardrails.yml`, Job `golive`) und weiterhin Pflichtschritt vor jedem Production-Deploy (`deploy.yml`). Grund: Seit die Website auf `main` liegt, hätte eine offene Freigabe sonst jeden Pull Request rot gefärbt. Der Check ist bewusst kein Pflicht-Check im Branch-Schutz (ADR-0006); die Sperre der Veröffentlichung liegt im Deploy.
+
 ## Verweise
 
 - ADR-0005 (Domain), ADR-0006 (Leitplanken), ADR-0007 (Design-Tokens)
