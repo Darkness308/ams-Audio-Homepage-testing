@@ -4,7 +4,7 @@
 
 /* AMS Audio Custom Styles */
 :root {
-    font-family: 'Inter', 'Outfit', 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter Variable', 'Outfit', 'DM Sans', system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
     color: #f8fafc;
@@ -52,7 +52,7 @@ html {
 
 /* Inter font utility */
 .font-inter {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Warm gradient text */

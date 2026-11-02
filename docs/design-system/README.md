@@ -53,29 +53,29 @@ Es gibt zwei Themes:
 - **Dunkel** ist das Markenbild und der Standard.
 - **Hell** gilt für Druck, PDFs, Angebote und Rechnungen und auf Wunsch der Besucher (Umschalter). Beim Drucken wird automatisch hell gesetzt.
 
-Komponenten nutzen nur semantische Tokens; die Primitive (`p-…`) sind Bausteine der Token-Datei.
+Komponenten nutzen nur semantische Tokens; die Primitive (`color-stone-…` usw.) sind Bausteine der Token-Datei.
 
-- **Flächen:** `bg` (Seite) → `surface` (Karten, Kacheln) → `surface-raised` (hervorgehobene Karten) → `surface-well` (Icon-Flächen, Chips). Bei Hover und Fokus wird die Fläche zu `surface-hover`. `surface-overlay` ist die Navigation nach dem Scrollen.
+- **Flächen:** `color-bg` (Seite) → `color-surface` (Karten, Kacheln) → `color-surface-raised` (hervorgehobene Karten) → `color-surface-well` (Icon-Flächen, Chips). Bei Hover und Fokus wird die Fläche zu `color-surface-hover`. `color-surface-overlay` ist die Navigation nach dem Scrollen.
 - **Textleiter**, Mindestkontrast auf allen Flächen in beiden Themes:
 
   | Token | Verwendung | Dunkel | Hell |
   |-------|------------|--------|------|
-  | `text-strong` | Wortmarke | 16,3:1 | 18,1:1 |
-  | `text` | Überschriften, Kennzahlen | 14,2:1 | 16,0:1 |
-  | `text-body` | Fließtext | 11,9:1 | 13,9:1 |
-  | `text-muted` | Einleitungen, Listen | 7,05:1 | 6,99:1 |
-  | `text-subtle` | Labels, Rechtliches | 5,01:1 | 5,27:1 |
+  | `color-text-strong` | Wortmarke | 16,3:1 | 18,1:1 |
+  | `color-text` | Überschriften, Kennzahlen | 14,2:1 | 16,0:1 |
+  | `color-text-body` | Fließtext | 11,9:1 | 13,9:1 |
+  | `color-text-muted` | Einleitungen, Listen | 7,05:1 | 6,99:1 |
+  | `color-text-subtle` | Labels, Rechtliches | 5,01:1 | 5,27:1 |
 
 - **Ränder:**
-  - `border-subtle` ist dekorativ. Hover: `border`, betont: `border-strong`.
-  - Eingabefelder und Bedienelemente ohne Text nutzen `border-control` (mindestens 3:1).
-  - `hairline` trennt Bereiche.
+  - `color-border-subtle` ist dekorativ. Hover: `color-border`, betont: `color-border-strong`.
+  - Eingabefelder und Bedienelemente ohne Text nutzen `color-border-control` (mindestens 3:1).
+  - `color-hairline` trennt Bereiche.
 - **Buttons:**
-  - primär: `action-primary-bg` mit `action-primary-fg`, Hover `action-primary-bg-hover`
-  - sekundär: `action-secondary-border` mit `action-secondary-fg`, Hover `action-secondary-fg-hover`
-- **Statusfarben** (`status-success`, `status-warning`, `status-danger`, `status-info` mit `-bg` und `-border`) nur für Zustände, immer mit Textlabel („Kritisch“, „Hoch“, „Mittel“, „Niedrig“). Erfolg und Gefahr unterscheiden sich vor allem im Farbton.
+  - primär: `color-action-primary-bg` mit `color-action-primary-fg`, Hover `color-action-primary-bg-hover`
+  - sekundär: `color-action-secondary-border` mit `color-action-secondary-fg`, Hover `color-action-secondary-fg-hover`
+- **Statusfarben** (`color-status-success`, `color-status-warning`, `color-status-danger`, `color-status-info` mit `-bg` und `-border`) nur für Zustände, immer mit Textlabel („Kritisch“, „Hoch“, „Mittel“, „Niedrig“). Erfolg und Gefahr unterscheiden sich vor allem im Farbton.
 - **Kein Akzent-Farbton.** Die Marke lebt von der Grauskala; Betonung entsteht über Helligkeit und Gewicht.
-- **Warmer Verlauf auf einem Wort pro Überschrift:** `text` → `text-muted` → `text`, 135°. Der Verlauf steht still; die frühere Endlos-Animation entfällt (WCAG 2.2.2).
+- **Warmer Verlauf auf einem Wort pro Überschrift:** `color-text` → `color-text-muted` → `color-text`, 135°. Der Verlauf steht still; die frühere Endlos-Animation entfällt (WCAG 2.2.2).
 - **Diagramme:**
   - Farbe nie als einziges Unterscheidungsmerkmal einsetzen.
   - Linien und Datenpunkte mindestens 3:1 zum Grund.
@@ -135,11 +135,11 @@ Komponenten nutzen nur semantische Tokens; die Primitive (`p-…`) sind Baustein
 
 ## Fokus und Bedienung
 
-- **Fokus:** Jedes Bedienelement zeigt bei Tastaturfokus einen Rahmen aus `focus-ring` (`size-focus-width` breit, `size-focus-offset` Abstand). `outline: none` ist verboten; die CI prüft das.
+- **Fokus:** Jedes Bedienelement zeigt bei Tastaturfokus einen Rahmen aus `color-focus-ring` (`size-focus-width` breit, `size-focus-offset` Abstand). `outline: none` ist verboten; die CI prüft das.
 - **Sticky-Navigation:** Sie verdeckt keinen fokussierten Inhalt; dafür `scroll-padding-top` in Höhe der Navigation setzen (WCAG 2.4.11).
 - **Links** sind nicht nur an der Farbe erkennbar, sondern unterstrichen oder eindeutig als Button gestaltet.
 - **Buttons** lösen eine echte Aktion aus. Kontaktdaten sind echte Links (`mailto:`, `tel:`) und zusätzlich als markierbarer Text sichtbar.
-- **Formulare:** sichtbare Labels, Fehlermeldungen als Text, Ränder in `border-control`.
+- **Formulare:** sichtbare Labels, Fehlermeldungen als Text, Ränder in `color-border-control`.
 
 ## Audio und Medien
 
@@ -154,7 +154,7 @@ Komponenten nutzen nur semantische Tokens; die Primitive (`p-…`) sind Baustein
   - 16 px in Buttons und Eyebrows
   - 20–24 px in Icon-Flächen
   - 28–48 px in Illustrationskacheln
-- **Farbe:** in Ruhe `text-muted`, bei Hover `text`.
+- **Farbe:** in Ruhe `color-text-muted`, bei Hover `color-text`.
 - **Bedeutung:** Icons, die etwas bedeuten, haben mindestens 3:1 Kontrast und ein Label. Dekorative Icons sind `aria-hidden`.
 
 ## Druck und Dokumente

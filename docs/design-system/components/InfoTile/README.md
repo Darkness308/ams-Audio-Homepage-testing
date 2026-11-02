@@ -1,8 +1,9 @@
-A compact bordered tile that pairs a 20px icon in a well with one short line of text.
+Eine kompakte umrandete Kachel, die ein 20px-Icon in einer Icon-Fläche mit einer kurzen Textzeile verbindet.
 
-Hand-written from the AcoustiScan feature grid in `src/components/AMSAudioHomepage.tsx`.
+Von Hand nachgebaut aus dem AcoustiScan-Feature-Raster in `src/components/AMSAudioHomepage.tsx`.
 
-- `surface-card` fill, 1px `border-subtle` (hover `border-hover`, 500ms, Tailwind default curve), `radius-xl`, `space-5` padding, `space-4` gap.
-- Well 40px, `radius-lg`, `surface-well`; icon `stone-400`.
-- Text `body` in `stone-300`, two to three words ("LiDAR 3D-Scan", "RT60 Analyse", "Material-DB").
-- Use in a 2-column grid with `space-4` gaps beside a feature heading.
+- Fläche `color-surface`, 1px `color-border-subtle` (bei Hover `color-border`, 500ms, Tailwind-Standardkurve), `radius-xl`, Innenabstand `space-5`, Abstand `space-4`.
+- Icon-Fläche 40px, `radius-lg`, `color-surface-well`; Icon in `color-text-muted`.
+- Text im Stil `body` (16px, Gewicht 400; Gewicht 300 erst ab 24px) in `color-text-body`, zwei bis drei Wörter („LiDAR 3D-Scan“, „RT60 Analyse“, „Material-DB“).
+- In einem zweispaltigen Raster mit `space-4` Abständen neben einer Feature-Überschrift verwenden.
+- Kontrast: `color-text-body` und `color-text-muted` erfüllen in beiden Themes mindestens WCAG AA (4,5:1).

@@ -1,11 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // Self-hosted fonts (no requests to Google servers)
-import '@fontsource/inter/200.css'
-import '@fontsource/inter/300.css'
-import '@fontsource/inter/400.css'
-import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
+// Inter Variable (Gewichte 100–900 in einer Datei), Familienname "Inter Variable"
+import '@fontsource-variable/inter/wght.css'
 import '@fontsource/outfit/300.css'
 import '@fontsource/outfit/400.css'
 import '@fontsource/outfit/500.css'
