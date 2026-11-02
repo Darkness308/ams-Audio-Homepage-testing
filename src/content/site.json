@@ -1,5 +1,5 @@
 {
-  "$kommentar": "Einzige Quelle für alle Angaben auf der Website (Startseite, Impressum, Datenschutz). HTML-Seiten lesen die Werte über {{schluessel}} beim Build ein (vite.config.ts), die Startseite importiert diese Datei. Jede Aussage über Personen und Leistungen braucht einen Eintrag unter nachweise; npm run golive bricht ab, solange ein Nachweis offen ist.",
+  "$kommentar": "Einzige Quelle für alle Angaben auf der Website (Startseite, Impressum, Datenschutz). HTML-Seiten und die Startseite setzen die Werte über {{schluessel}} ein (src/content/fill.ts). Jedes Feld muss über nachweise[].felder von einem Nachweis abgedeckt sein; npm run golive bricht ab, wenn ein Feld nicht abgedeckt oder ein Nachweis offen ist.",
   "stand": "2. November 2026",
   "marke": "AMS Audio",
   "anbieter": {
@@ -51,11 +51,17 @@
       "text": "Sprecher für Hörbücher und Reiseguides."
     }
   ],
+  "texte": {
+    "einleitung": "Ton, Akustik und Sprache von {{anbieter.name}}, {{person.beruf}} mit {{person.erfahrungJahre}} Jahren Erfahrung.",
+    "rolleInhaber": "{{person.beruf}} · Inhaber von {{anbieter.geschaeftsbezeichnung}}",
+    "beschreibung": "{{marke}} ist ein Angebot von {{anbieter.geschaeftsbezeichnung}} ({{anbieter.name}}, {{anbieter.ort}}): Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen und Sprecher."
+  },
   "nachweise": [
-    { "aussage": "Name, Anschrift, Telefon, E-Mail, USt-IdNr. im Impressum", "status": "belegt", "quelle": "Angabe SiD im Projektchat, 2026-11-02; Prüfziffer der USt-IdNr. rechnerisch geprüft" },
-    { "aussage": "25 Jahre Erfahrung", "status": "belegt", "quelle": "Bestätigung SiD, 2026-11-01" },
-    { "aussage": "Leistungen Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen (TA Lärm, Drohnen), Sprecher", "status": "belegt", "quelle": "Auswahl SiD im Projektchat, 2026-11-02" },
-    { "aussage": "SiD Consulting als strategische Beratung genannt", "status": "belegt", "quelle": "Zustimmung SiD, 2026-11-01" },
-    { "aussage": "Berufsbezeichnung „Ton-Ingenieur“", "status": "offen", "quelle": "Laut SiD Abschluss „Ton-Ingenieur (FH)“; Urkunde wird beschafft. Genaue Schreibweise nach Urkunde übernehmen (Ingenieurgesetz NRW)." }
+    { "aussage": "Marke AMS Audio als Angebot von MSH Audio, Inhaber Marc Schneider-Handrup", "status": "belegt", "quelle": "Projektauftrag SiD, 2026-11-01", "felder": ["marke", "texte.rolleInhaber", "texte.einleitung"] },
+    { "aussage": "Name, Anschrift, Telefon, E-Mail, USt-IdNr. im Impressum", "status": "belegt", "quelle": "Angabe SiD im Projektchat, 2026-11-02; Prüfziffer der USt-IdNr. rechnerisch geprüft", "felder": ["anbieter"] },
+    { "aussage": "25 Jahre Erfahrung", "status": "belegt", "quelle": "Bestätigung SiD, 2026-11-01", "felder": ["person.erfahrungJahre"] },
+    { "aussage": "Leistungen Veranstaltungston, Raumakustik, Bau- und Industrieakustik, Lärmprognosen (TA Lärm, Drohnen), Sprecher", "status": "belegt", "quelle": "Auswahl SiD im Projektchat, 2026-11-02", "felder": ["leistungen", "texte.beschreibung"] },
+    { "aussage": "SiD Consulting als strategische Beratung genannt", "status": "belegt", "quelle": "Zustimmung SiD, 2026-11-01", "felder": ["berater"] },
+    { "aussage": "Berufsbezeichnung „Ton-Ingenieur“", "status": "offen", "quelle": "Laut SiD Abschluss „Ton-Ingenieur (FH)“; Urkunde wird beschafft. Genaue Schreibweise nach Urkunde übernehmen (Ingenieurgesetz NRW).", "felder": ["person.beruf"] }
   ]
 }

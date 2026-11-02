@@ -10,18 +10,46 @@ import { join } from 'node:path'
 const fehler = []
 const site = JSON.parse(readFileSync('src/content/site.json', 'utf8'))
 
-// 1. Nachweise
-for (const n of site.nachweise ?? []) {
-  if (n.status !== 'belegt') fehler.push(`Nachweis offen: ${n.aussage} (${n.quelle ?? 'keine Quelle'})`)
+// 1. Nachweise: Block vorhanden, jeder Eintrag vollständig und belegt, jedes Feld abgedeckt
+const nachweise = Array.isArray(site.nachweise) ? site.nachweise : []
+if (nachweise.length === 0) fehler.push('site.json: Block „nachweise“ fehlt oder ist leer')
+for (const [i, n] of nachweise.entries()) {
+  for (const feld of ['aussage', 'status', 'quelle']) {
+    if (typeof n?.[feld] !== 'string' || !n[feld].trim()) fehler.push(`nachweise[${i}]: „${feld}“ fehlt`)
+  }
+  if (!Array.isArray(n?.felder) || n.felder.length === 0) fehler.push(`nachweise[${i}]: „felder“ fehlt (welche Angaben deckt der Nachweis ab?)`)
+  if (n?.status !== 'belegt') fehler.push(`Nachweis offen: ${n?.aussage} (${n?.quelle ?? 'keine Quelle'})`)
 }
+// Alle Blätter von site.json außer Verwaltungsfeldern sammeln
+const ohneNachweis = new Set(['stand', 'nachweise'])
+const blaetter = []
 const walk = (node, pfad) => {
   if (typeof node === 'string') {
     if (/\[OFFEN|TODO|XXX/i.test(node)) fehler.push(`Platzhalter in site.json: ${pfad} = „${node}“`)
+    blaetter.push(pfad)
   } else if (node && typeof node === 'object') {
-    for (const [k, v] of Object.entries(node)) walk(v, pfad ? `${pfad}.${k}` : k)
+    for (const [k, v] of Object.entries(node)) {
+      if (!pfad && (k.startsWith('$') || ohneNachweis.has(k))) continue
+      walk(v, pfad ? `${pfad}.${k}` : k)
+    }
   }
 }
 walk(site, '')
+const abgedeckt = nachweise.flatMap((n) => (Array.isArray(n?.felder) ? n.felder : []))
+for (const f of abgedeckt) {
+  if (!blaetter.some((b) => b === f || b.startsWith(`${f}.`))) fehler.push(`nachweise: Feld „${f}“ gibt es in site.json nicht`)
+}
+for (const b of blaetter) {
+  if (!abgedeckt.some((f) => b === f || b.startsWith(`${f}.`))) fehler.push(`site.json: „${b}“ ist von keinem Nachweis abgedeckt`)
+}
+// Platzhalter in Texten müssen auflösbar sein
+const lookup = (key) => key.split('.').reduce((node, part) => node?.[part], site)
+for (const b of blaetter) {
+  const wert = lookup(b)
+  for (const [, key] of wert.matchAll(/\{\{\s*([\w.]+)\s*\}\}/g)) {
+    if (typeof lookup(key) !== 'string') fehler.push(`site.json: ${b} verweist auf unbekannten Schlüssel „${key}“`)
+  }
+}
 
 // 2. Pflichtangaben Impressum
 for (const feld of ['name', 'geschaeftsbezeichnung', 'strasse', 'plz', 'ort', 'telefon', 'telefonLink', 'email', 'ustId']) {

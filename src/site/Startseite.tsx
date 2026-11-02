@@ -1,6 +1,7 @@
 import type { ComponentType, SVGProps } from 'react'
 import { Activity, ArrowRight, BookAudio, Building2, Mail, MapPin, Mic, Phone, Waves, AudioLines } from 'lucide-react'
 import site from '../content/site.json'
+import { fill } from '../content/fill'
 
 // Startseite der einfachen Website (Phase 2). Alle Inhalte kommen aus src/content/site.json;
 // hier steht nur Struktur. Komponenten-Klassen (ams-*) stammen aus dem Stylebook.
@@ -25,7 +26,7 @@ export function Kopfzeile() {
         <a className="site-brand" href={base} aria-label={`${site.marke}, zur Startseite`}>
           <span className="site-brand__mark" aria-hidden="true"><Waves /></span>
           <span className="site-brand__text">
-            <span className="site-brand__name">{site.marke.toUpperCase()}</span>
+            <span className="site-brand__name">{site.marke}</span>
             <span className="site-brand__sub">ein Angebot von {a.geschaeftsbezeichnung}</span>
           </span>
         </a>
@@ -72,9 +73,7 @@ export default function Startseite() {
               <span className="ams-gradient-text">Präzision.</span>
               <span>Harmonie.</span>
             </h1>
-            <p className="site-lead">
-              Ton, Akustik und Sprache von {a.name}, {site.person.beruf} mit {site.person.erfahrungJahre} Jahren Erfahrung.
-            </p>
+            <p className="site-lead">{fill(site.texte.einleitung, site)}</p>
             <div className="site-actions">
               <a className="ams-btn ams-btn--primary" href={`mailto:${a.email}`}>
                 <Mail aria-hidden="true" />
@@ -122,7 +121,7 @@ export default function Startseite() {
             <div className="site-grid">
               <div className="ams-service site-person">
                 <h3 className="site-person__name">{a.name}</h3>
-                <p className="site-person__role">{site.person.beruf} · Inhaber von {a.geschaeftsbezeichnung}</p>
+                <p className="site-person__role">{fill(site.texte.rolleInhaber, site)}</p>
               </div>
               <div className="ams-service site-person">
                 <h3 className="site-person__name">{site.berater.name}</h3>

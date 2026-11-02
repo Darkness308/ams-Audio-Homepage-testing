@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import type { Plugin } from 'vite'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
+import { fill } from './src/content/fill'
 
 const root = fileURLToPath(new URL('.', import.meta.url))
 
@@ -43,11 +44,11 @@ const sitePlugin = (): Plugin => ({
         order: 'pre',
         handler: (html, ctx) => {
             const site = JSON.parse(readFileSync(`${root}src/content/site.json`, 'utf8'))
-            return html.replace(/\{\{\s*([\w.]+)\s*\}\}/g, (_match, key: string) => {
-                const value = key.split('.').reduce<unknown>((node, part) => (node as Record<string, unknown> | undefined)?.[part], site)
-                if (typeof value !== 'string') throw new Error(`site.json: Schlüssel „${key}“ fehlt oder ist kein Text (${ctx.path})`)
-                return escapeHtml(value)
-            })
+            try {
+                return fill(html, site, escapeHtml)
+            } catch (e) {
+                throw new Error(`${(e as Error).message} (${ctx.path})`, { cause: e })
+            }
         },
     },
 })
